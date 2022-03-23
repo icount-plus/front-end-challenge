@@ -9,22 +9,25 @@ const SearchContext = createContext({
   cityIsAvailable: (cityName) => {},
 });
 
-const standardData = async function () {
-  return await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=f8ef0c0d33c04564868171625222003&lang=pt&days=3&q=Sao+Paulo`
-  )
+const url =
+  "http://api.weatherapi.com/v1/forecast.json?key=f8ef0c0d33c04564868171625222003&lang=pt&days=3&q=";
+
+async function getJSON() {
+  return await fetch(url + "Sao+Paulo")
     .then((response) => response.json())
-    .then((data) => data);
-};
+    .then((data) => {
+      return data;
+    });
+}
+
+const standardData = await getJSON();
 
 export function SearchContextProvider(props) {
   const [citiesData, setCitiesData] = useState([standardData]);
   const [currentCity, setCurrentCity] = useState(standardData);
 
   function addCityHandler(cityName, cityRegion, cityCountry) {
-    fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=f8ef0c0d33c04564868171625222003&lang=pt&days=3&q=${cityName},${cityRegion},${cityCountry}`
-    )
+    fetch(url + `${cityName},${cityRegion},${cityCountry}`)
       .then((response) => response.json())
       .then((data) => {
         if (!cityIsAvailableHandler(data.location.name)) {
@@ -40,9 +43,7 @@ export function SearchContextProvider(props) {
     // --> Update currentCity state
     citiesData.map((city) => {
       if (city.location.name === cityInfo.name) {
-        fetch(
-          `http://api.weatherapi.com/v1/forecast.json?key=f8ef0c0d33c04564868171625222003&lang=pt&days=3&q=${cityInfo.name},${cityInfo.region},${cityInfo.country}`
-        )
+        fetch(url + `${cityName},${cityRegion},${cityCountry}`)
           .then((response) => response.json())
           .then((data) => setCurrentCity(data));
       }
