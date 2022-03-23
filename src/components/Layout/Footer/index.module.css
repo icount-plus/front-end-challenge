@@ -1,0 +1,19 @@
+.Footer__container {
+  width: 100%;
+  height: 100px;
+  background-color: var(--theme-bg-color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+.Footer__container a {
+  color: var(--theme-text-primary);
+}
+
+.Footer__container a:hover {
+  color: blue;
+}

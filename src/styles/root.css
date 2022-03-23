@@ -1,0 +1,29 @@
+:root {
+  --std-box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
+  --std-transition: 0.4s ease-in;
+}
+
+/* ==== Light/Standard Theme Default Colors */
+body {
+  --theme-bg-color-primary: #f6f6f6;
+  --theme-bg-color-secondary: #98ded9;
+  --theme-text-primary: #101010;
+  --theme-text-secondary: #161d6f;
+  --theme-text-terciary: #c7ffd8;
+}
+
+/* ==== Dark Theme Default Colors */
+body.dark {
+  --theme-bg-color-primary: #202020;
+  --theme-bg-color-secondary: #150050;
+  --theme-text-primary: #f6f6f6;
+  --theme-text-secondary: #3f0071;
+  --theme-text-terciary: #610094;
+}
+
+/* ==== Smooth Theme Transition */
+body.theme-transition,
+body.theme-transition * {
+  transition: background-color 1500ms !important;
+  transition-delay: 0s !important;
+}

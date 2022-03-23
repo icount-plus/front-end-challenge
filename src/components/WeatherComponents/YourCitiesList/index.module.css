@@ -1,0 +1,45 @@
+.YourCitiesList__container {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.YourCitiesList__container ul li {
+  width: 90%;
+}
+
+.YourCitiesList__button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  padding: 1rem 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: left;
+  border-radius: 8px;
+  white-space: nowrap;
+  color: var(--theme-text-primary);
+  cursor: pointer;
+}
+
+.YourCitiesList__button:hover {
+  background: var(--theme-bg-color-secondary);
+}
+
+.YourCitiesList__button span:first-of-type {
+  max-width: 70%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.YourCitiesList__button span > * {
+  vertical-align: middle;
+}
+
+.YourCitiesList__button img {
+  max-width: 2.4rem;
+  width: 100%;
+  object-fit: cover;
+  margin-right: 4px;
+}

@@ -1,0 +1,40 @@
+.LocationCard__container,
+.LocationCard__aboutLocation {
+  max-width: 70%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.LocationCard__container {
+  gap: 1rem;
+}
+
+.LocationCard__aboutLocation {
+  gap: 0.2rem;
+}
+
+.LocationCard__aboutLocation h1 {
+  font-size: 3rem;
+}
+
+.LocationCard__dateInfo {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.LocationCard__temperature {
+  font-size: 4rem;
+}
+
+.LocationCard__temperature img {
+  max-width: 6rem;
+  width: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}

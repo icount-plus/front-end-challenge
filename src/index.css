@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  min-width: 320px;
+  height: 100vh;
+  font-family: "Source Sans Pro", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--theme-bg-color-primary);
+  color: var(--theme-text-primary);
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--theme-bg-color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--theme-text-primary);
+  border-radius: 8px;
+}

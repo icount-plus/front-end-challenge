@@ -1,0 +1,22 @@
+.ThemeButton__container {
+  width: 100%;
+}
+
+.ThemeButton_button {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  text-align: left;
+  font-size: 1.6rem;
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--theme-text-primary);
+  cursor: pointer;
+}
+
+.ThemeButton_button span {
+  vertical-align: middle;
+}
+
+.ThemeButton_button i {
+  margin-right: 6px;
+}

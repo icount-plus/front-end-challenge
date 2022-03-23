@@ -1,0 +1,41 @@
+.MainNavigation__wrapper {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+}
+
+.MainNavigation__wrapper .MainNavigation__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.2rem 1.6rem;
+}
+
+.MainNavigation__container h2 {
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.MainNavigation__wrapper .MainNavigation__addCityButton {
+  width: 2.8rem;
+  height: 2.8rem;
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  background-color: var(--theme-bg-color-secondary);
+  color: var(--theme-text-primary);
+  box-shadow: var(--std-box-shadow);
+  cursor: pointer;
+}
+
+.MainNavigation__rightSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  gap: 1.4rem;
+}

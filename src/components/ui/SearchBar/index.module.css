@@ -1,0 +1,80 @@
+.SearchBar__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.SearchBar__container input {
+  max-width: 20rem;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.3rem 1rem;
+  border-radius: 8px;
+  box-shadow: var(--std-box-shadow);
+}
+
+.ResultsList__container {
+  position: absolute;
+  inset: 0;
+  margin-top: 4rem;
+  max-width: 20rem;
+  width: 100%;
+  height: 15rem;
+  padding: 4px 12px 4px 8px;
+  scrollbar-width: thin;
+  text-align: left;
+  overflow-x: hidden;
+  border-radius: 8px;
+  box-shadow: var(--std-box-shadow);
+  background-color: var(--theme-bg-color-primary);
+}
+
+.ResultsList__container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.ResultsList__container::-webkit-scrollbar-track {
+  background-color: var(--theme-bg-color-secondary);
+}
+
+.ResultsList__container::-webkit-scrollbar-thumb {
+  background-color: var(--theme-text-primary);
+  border-radius: 4px;
+}
+
+.ResultsList__container li {
+  width: 100%;
+  height: 3.6rem;
+}
+
+.ResultsList__container button {
+  width: 100%;
+  height: 100%;
+  padding: 2px 8px;
+  color: var(--theme-text-primary);
+  text-align: left;
+  overflow: hidden;
+  border-radius: 4px;
+  white-space: nowrap;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.ResultsList__container button:hover {
+  background-color: var(--theme-bg-color-secondary);
+}
+
+@media screen and (max-width: 570px) {
+  .SearchBar__container,
+  .ResultsList__container {
+    position: fixed;
+    inset: 0;
+    margin: 8rem auto;
+  }
+
+  .ResultsList__container {
+    margin-top: 12rem;
+  }
+}

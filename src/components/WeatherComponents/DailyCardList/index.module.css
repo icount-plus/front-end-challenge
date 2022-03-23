@@ -1,0 +1,16 @@
+.DailyCardList__container {
+  max-width: 80%;
+  width: 100%;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+@media screen and (max-width: 670px) {
+  .DailyCardList__container {
+    height: 120px;
+    gap: 2rem;
+  }
+}
