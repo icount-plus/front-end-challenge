@@ -24,9 +24,8 @@ function HomeBackgroudImage() {
 
   const timeOfTheDay = testTimes();
   const weatherImage = "sunny-" + timeOfTheDay + ".png";
-  const desktopPath =
-    "/src/images/" + timeOfTheDay + "/desktop_" + weatherImage;
-  const mobilePath = "/src/images/" + timeOfTheDay + "/mobile_" + weatherImage;
+  const desktopPath = "/images/" + timeOfTheDay + "/desktop_" + weatherImage;
+  const mobilePath = "/images/" + timeOfTheDay + "/mobile_" + weatherImage;
 
   return (
     <div className={classes.HomeBackgroundImage__container}>
