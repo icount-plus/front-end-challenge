@@ -25,11 +25,9 @@ function MainNavigation() {
 
   return (
     <header className={classes.MainNavigation__wrapper}>
+      {sidebarMenuIsDisplayed && <Sidebar closeSidebar={toggleSidebarMenu} />}
+      {sidebarMenuIsDisplayed && <Backdrop closeSidebar={toggleSidebarMenu} />}
       <div className={classes.MainNavigation__container}>
-        {sidebarMenuIsDisplayed && <Sidebar closeSidebar={toggleSidebarMenu} />}
-        {sidebarMenuIsDisplayed && (
-          <Backdrop closeSidebar={toggleSidebarMenu} />
-        )}
         <SidebarButton toggleSidebarMenu={toggleSidebarMenu} />
         <h2>
           DevWeather <span className="fa-solid fa-code"></span>

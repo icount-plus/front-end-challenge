@@ -9,7 +9,7 @@
   background-color: var(--theme-bg-color-primary);
   box-shadow: var(--std-box-shadow);
   transition: var(--std-transition);
-  z-index: 100;
+  z-index: 1000;
 }
 
 .Sidebar__container {
