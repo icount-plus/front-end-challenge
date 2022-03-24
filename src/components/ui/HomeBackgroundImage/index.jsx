@@ -24,24 +24,24 @@ function HomeBackgroudImage() {
 
   const timeOfTheDay = testTimes();
   const weatherImage = "sunny-" + timeOfTheDay + ".png";
+  const desktopPath =
+    "/src/images/" + timeOfTheDay + "/desktop_" + weatherImage;
+  const mobilePath = "/src/images/" + timeOfTheDay + "/mobile_" + weatherImage;
 
   return (
     <div className={classes.HomeBackgroundImage__container}>
       <picture>
         <source
-          srcSet={"/src/images/" + timeOfTheDay + "/desktop_" + weatherImage}
+          srcSet={desktopPath}
           media="(min-width: 601px)"
           type="image/png"
         />
         <source
-          srcSet={"/src/images/" + timeOfTheDay + "/mobile_" + weatherImage}
+          srcSet={mobilePath}
           media="(max-width: 600px)"
           type="image/png"
         />
-        <img
-          src={"/src/images/" + timeOfTheDay + "/desktop_" + weatherImage}
-          alt=""
-        />
+        <img src={desktopPath} alt="" />
       </picture>
     </div>
   );
