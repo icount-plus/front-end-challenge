@@ -9,6 +9,16 @@ import classes from "./index.module.css";
 function HomePage() {
   const ctxSearch = useContext(SearchContext);
 
+  if (ctxSearch.isLoading) {
+    return (
+      <>
+        <section className={classes.Home__container}>
+          <p>Loading...</p>
+        </section>
+      </>
+    );
+  }
+
   return (
     <>
       <HomeBackgroundImage />

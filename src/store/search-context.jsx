@@ -1,6 +1,7 @@
-import { useState, createContext } from "react";
+import { useEffect, useState, createContext } from "react";
 
 const SearchContext = createContext({
+  isLoading: true,
   citiesData: [],
   currentCity: {},
   updateCurrentCity: (cityName) => {},
@@ -12,19 +13,21 @@ const SearchContext = createContext({
 const url =
   "http://api.weatherapi.com/v1/forecast.json?key=f8ef0c0d33c04564868171625222003&lang=pt&days=3&q=";
 
-async function getJSON() {
-  return await fetch(url + "Sao+Paulo")
-    .then((response) => response.json())
-    .then((data) => {
-      return data;
-    });
-}
-
-const standardData = await getJSON();
-
 export function SearchContextProvider(props) {
-  const [citiesData, setCitiesData] = useState([standardData]);
-  const [currentCity, setCurrentCity] = useState(standardData);
+  const [isLoading, setIsLoading] = useState(true);
+  const [citiesData, setCitiesData] = useState([]);
+  const [currentCity, setCurrentCity] = useState({});
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch(url + "Sao+Paulo")
+      .then((response) => response.json())
+      .then((data) => {
+        setCurrentCity(data);
+        setCitiesData([data]);
+        setIsLoading(false);
+      });
+  }, []);
 
   function addCityHandler(cityName, cityRegion, cityCountry) {
     fetch(url + `${cityName},${cityRegion},${cityCountry}`)
@@ -61,6 +64,7 @@ export function SearchContextProvider(props) {
   }
 
   const context = {
+    isLoading: isLoading,
     citiesData: citiesData,
     currentCity: currentCity,
     updateCurrentCity: updateCurrentCityHandler,
