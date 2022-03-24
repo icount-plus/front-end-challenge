@@ -1,4 +1,11 @@
+.Theme__container {
+  position: relative;
+}
+
 .Theme__menu {
+  position: absolute;
+  bottom: 125%;
+  left: 0;
   width: 100%;
   display: flex;
   flex-direction: column;

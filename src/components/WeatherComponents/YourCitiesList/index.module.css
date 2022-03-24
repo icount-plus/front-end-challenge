@@ -1,6 +1,12 @@
 .YourCitiesList__container {
-  width: 100%;
+  max-height: 90%;
+  width: 95%;
   margin-bottom: 8px;
+  overflow-y: scroll;
+}
+
+.YourCitiesList__container::-webkit-scrollbar {
+  background-color: var(--theme-bg-color-secondary);
 }
 
 .YourCitiesList__container ul li {
@@ -31,7 +37,7 @@
 }
 
 .YourCitiesButton__left {
-  max-width: 70%;
+  max-width: 60%;
   width: 100%;
   overflow: hidden;
 }
