@@ -10,16 +10,14 @@ function HomeBackgroudImage() {
     let current = ctxSearch.currentCity.current;
     let time = new Date(ctxSearch.currentCity.location.localtime).getHours();
     if (current.is_day) {
-      if (time >= 14 && time < 18) {
+      if (time >= 16 && time < 18) {
         return "late-afternoon";
-      } else if (time >= 12 && time < 14) {
+      } else if (time >= 12 && time < 16) {
         return "afternoon";
-      } else {
-        return "day";
       }
-    } else {
-      return "night";
+      return "day";
     }
+    return "night";
   }
 
   const timeOfTheDay = testTimes();
