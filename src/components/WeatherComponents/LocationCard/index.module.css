@@ -1,5 +1,6 @@
 .LocationCard__container,
-.LocationCard__aboutLocation {
+.LocationCard__aboutLocation,
+.LocationCard__temperature {
   max-width: 70%;
   width: 100%;
   display: flex;
@@ -29,7 +30,30 @@
 }
 
 .LocationCard__temperature {
+  max-width: 100%;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.LocationCard__temperature h2 {
+  font-size: 8rem;
+}
+
+.LocationCard__temperature__divider {
+  width: 0.4rem;
+  height: 4rem;
+  margin-bottom: 2rem;
+  align-self: flex-end;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.LocationCard__temperature .LocationCard__localtime {
   font-size: 4rem;
+  font-weight: bold;
+  align-self: flex-end;
+  margin-bottom: 1.2rem;
 }
 
 .LocationCard__temperature img {
@@ -37,4 +61,27 @@
   width: 100%;
   object-fit: cover;
   vertical-align: middle;
+}
+
+@media screen and (max-width: 540px) {
+  .LocationCard__container,
+  .LocationCard__aboutLocation {
+    max-width: 80%;
+  }
+
+  .LocationCard__temperature {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .LocationCard__temperature__divider,
+  .LocationCard__temperature .LocationCard__localtime {
+    align-self: center;
+  }
+
+  .LocationCard__temperature__divider {
+    height: 0.4rem;
+    width: 40%;
+    margin-bottom: 1rem;
+  }
 }

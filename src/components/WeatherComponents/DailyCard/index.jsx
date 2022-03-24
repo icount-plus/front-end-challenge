@@ -20,15 +20,11 @@ function DailyCard(props) {
           <img src={forecastDay.day.condition.icon} alt="" />{" "}
           {forecastDay.day.avgtemp_c}º C
         </h3>
-        <span className={classes.hiddenOnMedia}>
-          {forecastDay.day.condition.text}
-        </span>
       </div>
       <div className={classes.Card__forecastTemperature}>
-        <div className={classes.hiddenOnMedia}>
-          <h4>Max {forecastDay.day.maxtemp_c}º C</h4>
-          <h4>Min {forecastDay.day.mintemp_c}º C</h4>
-        </div>
+        <h4 className={classes.hiddenOnMedia}>
+          {forecastDay.day.maxtemp_c}º | {forecastDay.day.mintemp_c}º
+        </h4>
       </div>
     </li>
   );

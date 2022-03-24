@@ -44,11 +44,18 @@ export function SearchContextProvider(props) {
     const cityInfo = cityToUpdate.location;
 
     // --> Update currentCity state
-    citiesData.map((city) => {
+    citiesData.map((city, index) => {
       if (city.location.name === cityInfo.name) {
         fetch(url + `${cityInfo.name},${cityInfo.region},${cityInfo.country}`)
           .then((response) => response.json())
-          .then((data) => setCurrentCity(data));
+          .then((data) => {
+            setCurrentCity(data);
+
+            setCitiesData((prevCities) => {
+              prevCities[index] = data;
+              return prevCities;
+            });
+          });
       }
     });
   }
