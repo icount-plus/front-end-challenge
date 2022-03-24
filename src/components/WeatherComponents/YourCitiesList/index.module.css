@@ -1,16 +1,24 @@
 .YourCitiesList__container {
-  max-height: 90%;
+  height: 100%;
   width: 95%;
-  margin-bottom: 8px;
-  overflow-y: scroll;
 }
 
-.YourCitiesList__container::-webkit-scrollbar {
-  background-color: var(--theme-bg-color-secondary);
+.YourCitiesList__container ul::-webkit-scrollbar {
+  width: 4px;
+}
+
+.YourCitiesList__container ul::-webkit-scrollbar-thumb {
+  background-color: var(--theme-text-primary);
+  border-radius: 4px;
+}
+
+.YourCitiesList__container ul {
+  height: 90%;
+  overflow: hidden scroll;
 }
 
 .YourCitiesList__container ul li {
-  width: 90%;
+  width: 95%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -18,6 +26,7 @@
 
 .YourCitiesList__button {
   width: 100%;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: space-between;

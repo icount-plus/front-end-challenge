@@ -15,7 +15,7 @@
 .Sidebar__container {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   width: 100%;
   height: 100%;
@@ -26,7 +26,8 @@
   width: 100%;
   margin-left: 1rem;
   overflow: hidden;
-  max-height: 52.5px;
+  max-height: 90%;
+  margin-bottom: auto;
 }
 
 .Sidebar_header {
@@ -39,5 +40,4 @@
 
 .Sidebar__footer {
   width: 100%;
-  margin-top: auto;
 }
