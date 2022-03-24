@@ -11,7 +11,7 @@ const SearchContext = createContext({
 });
 
 const url =
-  "http://api.weatherapi.com/v1/forecast.json?key=f8ef0c0d33c04564868171625222003&lang=pt&days=3&q=";
+  "https://api.weatherapi.com/v1/forecast.json?key=f8ef0c0d33c04564868171625222003&lang=pt&days=3&q=";
 
 export function SearchContextProvider(props) {
   const [isLoading, setIsLoading] = useState(true);

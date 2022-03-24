@@ -11,7 +11,7 @@ function SearchBar(props) {
   useEffect(() => {
     if (filteredText.length > 2) {
       fetch(
-        `http://api.weatherapi.com/v1/search.json?key=f8ef0c0d33c04564868171625222003&lang=pt&q=${filteredText}`
+        `https://api.weatherapi.com/v1/search.json?key=f8ef0c0d33c04564868171625222003&lang=pt&q=${filteredText}`
       )
         .then((response) => response.json())
         .then((data) => setSearchResults(data));
