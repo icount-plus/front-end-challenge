@@ -46,7 +46,7 @@ export function SearchContextProvider(props) {
     // --> Update currentCity state
     citiesData.map((city) => {
       if (city.location.name === cityInfo.name) {
-        fetch(url + `${cityName},${cityRegion},${cityCountry}`)
+        fetch(url + `${cityInfo.name},${cityInfo.region},${cityInfo.country}`)
           .then((response) => response.json())
           .then((data) => setCurrentCity(data));
       }
