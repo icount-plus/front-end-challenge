@@ -5,6 +5,9 @@
 
 .YourCitiesList__container ul li {
   width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .YourCitiesList__button {
@@ -27,7 +30,7 @@
   background: var(--theme-bg-color-secondary);
 }
 
-.YourCitiesList__button span:first-of-type {
+.YourCitiesButton__left {
   max-width: 70%;
   width: 100%;
   overflow: hidden;

@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Sidebar from "../Sidebar";
 import SidebarButton from "../Sidebar/SidebarButton";
+import AddRemoveCityButton from "../../ui/AddRemoveCityButton";
 import SearchBar from "../../ui/SearchBar";
 import Backdrop from "../../ui/Backdrop";
 import classes from "./index.module.css";
@@ -35,17 +36,12 @@ function MainNavigation() {
         </h2>
         <div className={classes.MainNavigation__rightSection}>
           {searchBarIsDisplayed && <SearchBar onSelection={toggleSearchBar} />}
-          <button
+          <AddRemoveCityButton
             onClick={toggleSearchBar}
-            className={classes.MainNavigation__addCityButton}
-            type="button"
-          >
-            <i
-              className={
-                searchBarIsDisplayed ? "fa-solid fa-xmark" : "fa-solid fa-plus"
-              }
-            ></i>
-          </button>
+            icon={
+              searchBarIsDisplayed ? "fa-solid fa-xmark" : "fa-solid fa-plus"
+            }
+          />
         </div>
       </div>
     </header>

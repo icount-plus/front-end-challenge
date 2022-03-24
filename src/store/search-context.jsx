@@ -61,9 +61,31 @@ export function SearchContextProvider(props) {
   }
 
   function removeCityHandler(cityName) {
-    setCitiesData((prevCities) => {
-      return prevCities.filter((city) => city.location.name !== cityName);
-    });
+    if (citiesData.length == 1) {
+      // --> Fetch Standard Data
+      fetch(url + "Sao+Paulo")
+        .then((response) => response.json())
+        .then((data) => {
+          setCurrentCity(data);
+          setCitiesData([data]);
+        });
+    } else {
+      citiesData.map((city, index) => {
+        if (city.location.name === cityName) {
+          let prevCities = [...citiesData];
+
+          if (index === 0) {
+            setCurrentCity(prevCities[index + 1]);
+          } else {
+            setCurrentCity(prevCities[index - 1]);
+          }
+
+          setCitiesData(() => {
+            return prevCities.filter((city) => city.location.name !== cityName);
+          });
+        }
+      });
+    }
   }
 
   function cityIsAvailableHandler(cityName) {
