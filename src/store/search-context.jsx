@@ -4,7 +4,7 @@ const SearchContext = createContext({
   isLoading: true,
   citiesData: [],
   currentCity: {},
-  updateCurrentCity: (cityName) => {},
+  updateCurrentCity: (cityToUpdate) => {},
   addCity: (cityName, cityRegion, cityCountry) => {},
   removeCity: (cityName) => {},
   cityIsAvailable: (cityName) => {},
@@ -13,21 +13,37 @@ const SearchContext = createContext({
 const url =
   "https://api.weatherapi.com/v1/forecast.json?key=f8ef0c0d33c04564868171625222003&lang=pt&days=3&q=";
 
+const localCitiesData = JSON.parse(localStorage.getItem("localCities") || "[]");
+const localCurrentCity = JSON.parse(
+  localStorage.getItem("localCurrent") || "{}"
+);
+
 export function SearchContextProvider(props) {
   const [isLoading, setIsLoading] = useState(true);
-  const [citiesData, setCitiesData] = useState([]);
-  const [currentCity, setCurrentCity] = useState({});
+  const [citiesData, setCitiesData] = useState(localCitiesData);
+  const [currentCity, setCurrentCity] = useState(localCurrentCity);
 
   useEffect(() => {
-    setIsLoading(true);
-    fetch(url + "Sao+Paulo")
-      .then((response) => response.json())
-      .then((data) => {
-        setCurrentCity(data);
-        setCitiesData([data]);
-        setIsLoading(false);
-      });
+    if (Object.keys(currentCity).length === 0) {
+      setIsLoading(true);
+      fetch(url + "Sao+Paulo")
+        .then((response) => response.json())
+        .then((data) => {
+          setCurrentCity(data);
+          setCitiesData([data]);
+          setIsLoading(false);
+        });
+    } else {
+      setIsLoading(true);
+      updateCurrentCityHandler(currentCity);
+      setIsLoading(false);
+    }
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("localCities", JSON.stringify(citiesData));
+    localStorage.setItem("localCurrent", JSON.stringify(currentCity));
+  }, [citiesData, currentCity]);
 
   function addCityHandler(cityName, cityRegion, cityCountry) {
     fetch(url + `${cityName},${cityRegion},${cityCountry}`)
