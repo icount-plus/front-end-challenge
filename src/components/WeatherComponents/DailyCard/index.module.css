@@ -22,6 +22,7 @@
     var(--theme-bg-color-secondary),
     var(--theme-bg-color-primary)
   );
+  box-shadow: var(--std-box-shadow);
 }
 
 .Card__forecastDate span {
