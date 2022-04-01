@@ -5,14 +5,22 @@
   box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-  background-color: var(--theme-bg-color-primary);
-}
+@media screen and (min-width: 671px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--theme-bg-color-primary);
+  }
 
-::-webkit-scrollbar-thumb {
-  background-color: var(--theme-text-primary);
-  border-radius: 8px;
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--theme-text-primary);
+    border-radius: 8px;
+  }
+
+  html,
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--theme-text-primary) var(--theme-bg-color-secondary);
+  }
 }
 
 html,
@@ -24,8 +32,6 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  scrollbar-width: thin;
-  scrollbar-color: var(--theme-text-primary) var(--theme-bg-color-secondary);
 }
 
 html {
