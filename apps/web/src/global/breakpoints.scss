@@ -1,0 +1,22 @@
+$breakpoints: (
+  'sm': (
+    min-width: 540px,
+  ),
+  'md': (
+    min-width: 767px,
+  ),
+  'lg': (
+    min-width: 992px,
+  ),
+  'xl': (
+    min-width: 1200px,
+  ),
+) !default;
+
+@mixin query($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+}

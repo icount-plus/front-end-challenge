@@ -1,0 +1,25 @@
+.header-container {
+  width: 100vw;
+  height: 65px;
+  background: var(--background-color-up);
+
+  position: fixed;
+  top: 0px;
+  right: 0px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 25px;
+
+  svg {
+    width: 54px;
+    height: 54px;
+    cursor: pointer;
+  }
+
+  @include query('sm') {
+    padding: 0px;
+  }
+}
