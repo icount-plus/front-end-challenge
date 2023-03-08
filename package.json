@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "commit": "git-cz",
-    "prepare": "husky install ",
+    "prepare": "husky install",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "start": "turbo start --no-daemon --no-cache",
     "test": "turbo test",
     "build": "turbo build --no-daemon --no-cache",

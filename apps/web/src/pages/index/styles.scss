@@ -18,7 +18,7 @@
     max-width: 180px;
     margin: auto;
     gap: 20px;
-    
+
     .mae-card-container {
       max-width: 100%;
     }
@@ -38,6 +38,13 @@
       height: 280px;
       border-radius: 5px;
     }
+  }
+
+  .mae-modal-container > div {
+    width: 100%;
+    max-width: 400px;
+    min-height: 400px;
+    background: var(--background-color-down);
   }
 
   @include query('md') {
