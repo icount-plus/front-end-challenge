@@ -6,9 +6,12 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "./src/global/breakpoints.scss";`,
+        additionalData: `@import "./src/global/mixins.scss";`,
       },
     },
+  },
+  build: {
+    outDir: 'dist/',
   },
   plugins: [react(), tsconfigPaths()],
 });

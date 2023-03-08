@@ -1,7 +1,8 @@
 .header-container {
   width: 100vw;
   height: 65px;
-  background: var(--background-color-up);
+  background: var(--background-color-blur);
+  backdrop-filter: blur(5px);
 
   position: fixed;
   top: 0px;
@@ -11,15 +12,25 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 10px 25px;
+  padding: 10px 20px;
+  z-index: 10;
 
   svg {
-    width: 54px;
-    height: 54px;
+    width: 65px;
+    height: 65px;
     cursor: pointer;
   }
 
-  @include query('sm') {
-    padding: 0px;
+  .mae-search-container {
+    display: none;
+  }
+
+  @include query('md') {
+    padding: 10px 80px;
+
+    .mae-search-container {
+      width: 400px;
+      display: flex;
+    }
   }
 }

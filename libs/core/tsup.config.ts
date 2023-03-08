@@ -3,10 +3,12 @@ import { defineConfig } from 'tsup';
 export default defineConfig({
   entry: ['src', 'index.ts'],
   splitting: false,
-  dts: true,
   outDir: 'dist',
   skipNodeModulesBundle: true,
   sourcemap: false,
+  loader: {
+    '.scss': 'file',
+  },
   tsconfig: 'tsconfig.json',
   clean: true,
 });
