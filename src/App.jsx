@@ -1,9 +1,10 @@
 import Input from './components/Input';
+import Contributors from './components/Contributors';
 
 function App() {
   return (
     <div className="flex justify-center">
-      <div className="h-screen max-w-7xl w-screen flex items-center justify-center">
+      <div className="h-screen max-w-7xl w-screen flex flex-col items-center justify-center">
         <section>
           <div>
             <h1 className="text-white text-center text-3xl sm:text-5xl md:text-6xl lg:text-8xl 2xl:text-9xl font-lalezar">
@@ -14,7 +15,12 @@ function App() {
               organization
             </p>
           </div>
-          <Input />
+          <div className="flex flex-col items-center justify-center my-16">
+            <Input button />
+          </div>
+        </section>
+        <section className="w-full flex justify-center">
+          <Contributors />
         </section>
       </div>
     </div>

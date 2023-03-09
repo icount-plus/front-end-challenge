@@ -1,10 +1,12 @@
-function Button() {
+import { FaSearch } from 'react-icons/fa';
+
+function Button({ text, colors }) {
   return (
     <button
       type="button"
-      className="tracking-wide font-lalezar text-base sm:text-lg bg-green-1 border-b-4 border-green-2 rounded-md px-3 mr-2 "
+      className={`tracking-wide font-lalezar text-sm sm:text-base bg-${colors[0]} translate-x-1 border-b-4 border-${colors[1]} rounded-md px-2 py-1 mr-2 my-1 leading-4`}
     >
-      Search
+      {text === 'FaSearch' ? <FaSearch /> : text}
     </button>
   );
 }
