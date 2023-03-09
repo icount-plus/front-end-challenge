@@ -1,0 +1,96 @@
+.view-anime-container {
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &:first-child {
+      gap: 20px;
+    }
+  }
+
+  .cover-anime {
+    width: 165px;
+    height: 280px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+    border-radius: 5px;
+  }
+
+  .title-anime {
+    p {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 7;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+
+      width: 100%;
+      color: var(--text-color-down);
+      font-size: 0.85rem;
+    }
+
+    h3,
+    p {
+      font-family: var(--font-family);
+      letter-spacing: 0.03rem;
+    }
+
+    h3 {
+      color: var(--primary-color-up);
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+  }
+
+  .badge-anime {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 20px;
+
+    > div {
+      padding-left: 10px;
+      height: 30px;
+      border-radius: 5px;
+      border: 1px solid var(--primary-color-up);
+      color: var(--primary-color-up);
+      font-family: var(--font-family);
+      text-transform: uppercase;
+      overflow: hidden;
+      font-size: 0.7rem;
+      background: var(--primary-color-down);
+
+      &,
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      div {
+        height: 100%;
+        width: 1px;
+        z-index: 1;
+        background: var(--primary-color-up);
+        margin-left: 10px;
+      }
+
+      span {
+        width: 100%;
+        height: 100%;
+        font-weight: 700;
+        background: white;
+        padding: 0px 10px;
+      }
+    }
+  }
+}

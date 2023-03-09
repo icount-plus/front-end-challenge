@@ -49,6 +49,9 @@ export type Anime = {
   cover: string;
   rank: number;
   id: number;
+  description: string;
+  source: string;
+  popularity: number;
   score: number;
   duration: string;
   year: number;

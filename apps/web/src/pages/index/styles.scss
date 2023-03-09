@@ -1,6 +1,7 @@
 .index-container {
   width: 100vw;
   height: 100vh;
+  position: relative;
   height: 100dvh;
   overflow-x: hidden;
 
@@ -9,7 +10,7 @@
 
   @include scrollbar;
 
-  > div {
+  .animes {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,11 +41,15 @@
     }
   }
 
-  .mae-modal-container > div {
-    width: 100%;
-    max-width: 400px;
-    min-height: 400px;
-    background: var(--background-color-down);
+  .mae-modal-container {
+    z-index: 12;
+
+    > div {
+      width: 90%;
+      max-width: 600px;
+      min-height: 400px;
+      background: var(--background-color-down);
+    }
   }
 
   @include query('md') {

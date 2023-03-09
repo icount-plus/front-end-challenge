@@ -10,7 +10,10 @@ export const animeBuilder = (data: AnimesResponse) =>
       mal_id,
       images,
       rank,
+      synopsis,
       score,
+      source,
+      popularity,
       year,
     }) => ({
       title: title || title_english || title_japanese,
@@ -20,5 +23,8 @@ export const animeBuilder = (data: AnimesResponse) =>
       score: score,
       year: year,
       id: mal_id,
+      description: synopsis,
+      popularity,
+      source,
     })
   ) as Anime[];
