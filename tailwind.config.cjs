@@ -20,7 +20,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        lalezar: ['Lalezar', 'cursive'],
+        lalezar: ['Lalezar', 'Inter'],
       },
     },
   },
