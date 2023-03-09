@@ -24,12 +24,12 @@
     align-items: center;
   }
 
-  .mae-search-container {
-    display: none;
-  }
-
   .toggle-theme-container {
     gap: 15px;
+
+    .mae-search-container {
+      display: none;
+    }
 
     > i {
       font-size: 1.1rem;
@@ -51,13 +51,34 @@
   @include query('md') {
     padding: 10px 80px;
 
-    .toggle-theme-container > i:last-child {
-      display: none;
-    }
+    .toggle-theme-container {
+      .mae-search-container {
+        width: 400px;
+        display: flex;
+      }
 
-    .mae-search-container {
-      width: 400px;
-      display: flex;
+      > i:last-child {
+        display: none;
+      }
     }
+  }
+}
+
+.search-modal-container {
+  padding: 20px;
+  width: 100%;
+  background: var(--foreground-color-down);
+
+  .mae-search-container {
+    width: 100%;
+  }
+}
+
+.search-modal {
+  z-index: 12;
+
+  > div {
+    width: 100%;
+    max-width: 400px;
   }
 }

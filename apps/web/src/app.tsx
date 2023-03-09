@@ -11,11 +11,6 @@ import '@/global/global.scss';
 
 const App = () => {
   const { theme } = useSelector((state: AppState) => state);
-  // useEffect(() => {
-  //   axios
-  //     .get(`https://api.jikan.moe/v4/anime?q=naruto`)
-  //     .then(res => console.log(res.data));
-  // }, []);
 
   return (
     <div className={classNames({ [theme]: true })}>

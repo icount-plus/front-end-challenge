@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { MaeSearch } from '@mae/core';
+import { useEffect, useState } from 'react';
+import { MaeModal, MaeSearch } from '@mae/core';
 import Icon from 'react-inlinesvg';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -19,6 +19,7 @@ const Navbar = () => {
   const schema = yup.object().shape({
     search: yup.string().required(),
   });
+  const [openSearchModal, setOpenSearchModal] = useState(true);
   const { theme } = useSelector((state: AppState) => state);
   const dispatch = useDispatch();
 
@@ -41,6 +42,8 @@ const Navbar = () => {
 
   const onSearchAnime = () => {
     if (isValid) {
+      setOpenSearchModal(false);
+
       dispatch(setIsLoadingAnimesAction(true));
 
       searchAnimesService(form.search).then(
@@ -59,28 +62,42 @@ const Navbar = () => {
 
   const toggleTheme = () => dispatch(toggleThemeAction());
 
+  const search = (
+    <MaeSearch
+      value={form.search}
+      active={isValid}
+      placeholder="Search a anime"
+      onSearch={() => onSearchAnime()}
+      onChange={e => setValue('search', e, { shouldValidate: true })}
+    />
+  );
+
   return (
-    <header className="header-container">
-      <Icon src={sushi} onClick={() => getTopAnimes()} />
+    <>
+      <MaeModal
+        className="search-modal"
+        open={openSearchModal}
+        onClose={() => setOpenSearchModal(false)}
+      >
+        <div className="search-modal-container">{search}</div>
+      </MaeModal>
 
-      <div className="toggle-theme-container">
-        <MaeSearch
-          value={form.search}
-          active={isValid}
-          placeholder="Search a anime"
-          onSearch={() => onSearchAnime()}
-          onChange={e => setValue('search', e, { shouldValidate: true })}
-        />
+      <header className="header-container">
+        <Icon src={sushi} onClick={() => getTopAnimes()} />
 
-        {theme == 'dark' ? (
-          <i className="ri-sun-fill" onClick={toggleTheme} />
-        ) : (
-          <i className="ri-moon-fill" onClick={toggleTheme} />
-        )}
+        <div className="toggle-theme-container">
+          {search}
 
-        <i className="ri-search-eye-line" />
-      </div>
-    </header>
+          {theme == 'dark' ? (
+            <i className="ri-sun-fill" onClick={toggleTheme} />
+          ) : (
+            <i className="ri-moon-fill" onClick={toggleTheme} />
+          )}
+
+          <i className="ri-search-eye-line" onClick={() => setOpenSearchModal(true)} />
+        </div>
+      </header>
+    </>
   );
 };
 

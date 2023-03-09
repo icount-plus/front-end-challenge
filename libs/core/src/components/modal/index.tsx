@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { MouseEvent } from 'react';
 
@@ -8,7 +9,7 @@ import { MaeModalProps } from './model';
 import './styles.scss';
 
 export const MaeModal = (props: MaeModalProps) => {
-  const { open, children, fixed, onClose } = props;
+  const { open, children, fixed, onClose, className } = props;
 
   const toggle = (e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) =>
     !fixed && e.target === e.currentTarget && onClose && onClose();
@@ -18,7 +19,7 @@ export const MaeModal = (props: MaeModalProps) => {
       {open && (
         <div
           {...props}
-          className="mae-modal-container"
+          className={classNames({ 'mae-modal-container': true, [className || '']: true })}
           onClick={toggle}
           {...animationModal.overlay}
         >

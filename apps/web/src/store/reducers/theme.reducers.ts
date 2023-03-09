@@ -2,7 +2,7 @@ import { AnyAction, createReducer } from '@reduxjs/toolkit';
 
 import { setThemeAction, toggleThemeAction } from '@/store/actions/theme.actions';
 
-const INITIAL: string = 'dark';
+const INITIAL: string = localStorage.getItem('theme') || 'dark';
 
 export default createReducer<string>(INITIAL, builder => {
   builder
