@@ -7,6 +7,12 @@ module.exports = {
         blue: {
           1: '#1F6FEB',
         },
+        gray: {
+          1: '#C9D1D9',
+        },
+      },
+      fontFamily: {
+        lalezar: ['Lalezar', 'cursive'],
       },
     },
   },
