@@ -11,6 +11,10 @@ module.exports = {
         gray: {
           1: '#C9D1D9',
         },
+        green: {
+          1: '#38B158',
+          2: '#027C44',
+        },
       },
       fontFamily: {
         lalezar: ['Lalezar', 'cursive'],
