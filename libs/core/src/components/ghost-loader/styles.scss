@@ -3,8 +3,8 @@
   height: 100%;
   background: linear-gradient(
     to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 50%,
-    rgba(255, 255, 255, 0) 100%
+    var(--ghost-loader-color-up) 0%,
+    var(--ghost-loader-color-down) 50%,
+    var(--ghost-loader-color-up) 100%
   );
 }

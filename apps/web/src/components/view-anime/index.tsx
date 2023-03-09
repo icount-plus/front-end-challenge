@@ -4,6 +4,7 @@ import './styles.scss';
 
 export const ViewAnime = ({
   anime: { cover, title, description, popularity, rank, source },
+  onClose,
 }: ViewAnimeProps) => {
   const coverStyles = { backgroundImage: `url(${cover})` };
 
@@ -19,19 +20,21 @@ export const ViewAnime = ({
         </div>
       </div>
 
+      <i className="ri-close-line" onClick={() => onClose()} />
+
       <div className="badge-anime">
         <div>
-          Source
+          <p>Source</p>
           <div />
           <span>{source}</span>
         </div>
         <div>
-          Rank
+          <p>Rank</p>
           <div />
           <span>{rank}</span>
         </div>
         <div>
-          Popularity
+          <p>Popularity</p>
           <div />
           <span> {popularity}</span>
         </div>

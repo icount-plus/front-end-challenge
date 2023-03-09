@@ -16,6 +16,11 @@
     font-size: 0.8rem;
     padding: 8px 10px;
 
+    &,
+    &::placeholder {
+      color: var(--text-color-down);
+    }
+
     &:focus {
       border-color: var(--primary-color-up);
     }

@@ -36,19 +36,17 @@ const Index = () => {
   return (
     <div className="index-container">
       <MaeModal open={openModal} onClose={() => setOpenModal(false)}>
-        {viewAnime && <ViewAnime anime={viewAnime} />}
+        {viewAnime && <ViewAnime anime={viewAnime} onClose={() => setOpenModal(false)} />}
       </MaeModal>
+
+      {animes && !loading && animes.length == 0 && <NoSearchResults />}
 
       <div className="animes">
         {loading
           ? ghostLoaders.map(value => <MaeGhostLoader key={value} />)
           : animes &&
-            (animes.length == 0 ? (
-              <NoSearchResults />
-            ) : (
-              animes.map(anime => (
-                <MaeCard key={anime.id} {...anime} onClick={() => onViewAnime(anime)} />
-              ))
+            animes.map(anime => (
+              <MaeCard key={anime.id} {...anime} onClick={() => onViewAnime(anime)} />
             ))}
       </div>
     </div>
