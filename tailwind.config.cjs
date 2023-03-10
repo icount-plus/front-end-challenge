@@ -4,20 +4,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        blue: {
-          1: '#0D1117',
-          2: '#30363D',
-          3: '#1F6FEB',
-          4: '#044082',
-        },
-        gray: {
-          1: '#C9D1D9',
-          2: '#21262D',
-        },
-        green: {
-          1: '#38B158',
-          2: '#027C44',
-        },
+        bgblue: '#0D1117',
+        bgblue2: '#30363D',
+        bgButtonBlue: '#1F6FEB',
+        bdButtonBlue: '#044082',
+        textGray: '#C9D1D9',
+        bgGray: '#21262D',
+        bgButtonGreen: '#38B158',
+        bdButtonGreen: '#027C44',
       },
       fontFamily: {
         lalezar: ['Lalezar', 'Inter'],
