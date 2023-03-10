@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         bgblue: '#0D1117',
         bgblue2: '#30363D',
+        textBlue: '#58A6FF',
         bgButtonBlue: '#1F6FEB',
         bdButtonBlue: '#044082',
         textGray: '#C9D1D9',
