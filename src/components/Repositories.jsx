@@ -1,6 +1,6 @@
 import GitHubStats from './GitHubStats';
 
-function Organizations() {
+function Repositories() {
   return (
     <div className="flex flex-col md:flex-row md:items-center pr-1 w-full h-full">
       <div className="flex flex-col items-center md:w-5/12 ">
@@ -9,7 +9,7 @@ function Organizations() {
         </h1>
         <img
           src="https://avatars.githubusercontent.com/u/25363578?s=200&v=4"
-          alt="organization logo"
+          alt="repository owner logo"
           loading="lazy"
           className="w-16 sm:w-20 md:w-28 rounded-md"
         />
@@ -31,4 +31,4 @@ function Organizations() {
   );
 }
 
-export default Organizations;
+export default Repositories;

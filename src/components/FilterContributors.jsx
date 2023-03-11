@@ -1,27 +1,31 @@
-import { useState } from 'react';
+import useBoolean from '../hooks/useBoolean';
 import Button from './Button';
 import Input from './Input';
 
 function FilterContributors() {
-  const [isSearch, setIsSearch] = useState(false);
+  const { isBoolean, setIsBoolean } = useBoolean();
 
   return (
     <div className=" flex items-center max-w-2xl w-full bg-bgGray rounded-t-lg rounded-tl-lg py-1 px-2">
-      {!isSearch && (
+      {!isBoolean && (
         <div className="flex w-full sm:w-2/4">
-          <Button
-            text="Top Contributors"
-            colors={['bgButtonBlue', 'bdButtonBlue']}
-          />
-          <Button
-            text="All Contributors"
-            colors={['bgButtonBlue', 'bdButtonBlue']}
-          />
+          <button type="button">
+            <Button
+              text="Top Contributors"
+              colors={['bgButtonBlue', 'bdButtonBlue']}
+            />
+          </button>
+          <button type="button">
+            <Button
+              text="All Contributors"
+              colors={['bgButtonBlue', 'bdButtonBlue']}
+            />
+          </button>
         </div>
       )}
       <div
-        className={`${isSearch ? 'block' : 'hidden'} ${
-          isSearch && 'w-full'
+        className={`${isBoolean ? 'block' : 'hidden'} ${
+          isBoolean && 'w-full'
         } sm:w-2/4 sm:block`}
       >
         <Input placeholder="Type a contributor name..." />
@@ -29,9 +33,9 @@ function FilterContributors() {
       <button
         type="button"
         className="sm:hidden"
-        onClick={() => setIsSearch((val) => !val)}
+        onClick={() => setIsBoolean((v) => !v)}
       >
-        {isSearch ? (
+        {isBoolean ? (
           <Button text="X" colors={['bgblue2', 'bgblue']} />
         ) : (
           <Button colors={['bgblue2', 'bgblue']} />
