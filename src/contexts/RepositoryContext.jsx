@@ -1,6 +1,6 @@
 import { createContext, useMemo, useState } from 'react';
 import useSWR from 'swr';
-import { fetcher, getKeyRepo } from '../api';
+import { fetcher, getKeyRepo } from '../api/repositoryApi';
 
 export const RepositoryContext = createContext(null);
 
@@ -25,7 +25,7 @@ export default function RepositoryProvider({ children }) {
       isLoading,
       getInput,
     }),
-    []
+    [data, error, isLoading]
   );
 
   return (

@@ -1,8 +1,16 @@
+import { useContext } from 'react';
+import { RepositoryContext } from '../contexts/RepositoryContext';
 import FilterContributors from './FilterContributors';
 import Repositories from './Repositories';
 import ContributorsResponse from './ContributorsResponse';
 
 function Contributors() {
+  const { data, error, isLoading } = useContext(RepositoryContext);
+
+  if (!data) {
+    return null;
+  }
+
   return (
     <>
       <FilterContributors />

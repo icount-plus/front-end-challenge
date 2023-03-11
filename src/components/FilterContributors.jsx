@@ -30,11 +30,7 @@ function FilterContributors() {
       >
         <Input placeholder="Type a contributor name..." />
       </div>
-      <button
-        type="button"
-        className="sm:hidden"
-        onClick={() => setIsBoolean((v) => !v)}
-      >
+      <button type="button" className="sm:hidden" onClick={setIsBoolean}>
         {isBoolean ? (
           <Button text="X" colors={['bgblue2', 'bgblue']} />
         ) : (

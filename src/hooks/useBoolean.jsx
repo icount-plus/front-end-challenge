@@ -5,6 +5,6 @@ export default function useBoolean() {
 
   return {
     isBoolean,
-    setIsBoolean,
+    setIsBoolean: () => setIsBoolean((v) => !v),
   };
 }

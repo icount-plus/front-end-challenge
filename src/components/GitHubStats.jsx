@@ -1,24 +1,22 @@
-import { TbUsers, TbMoodHappy } from 'react-icons/tb';
-import { RiGitRepositoryLine } from 'react-icons/ri';
-import { VscIssues } from 'react-icons/vsc';
+import { VscRepoForked, VscIssues, VscStarEmpty } from 'react-icons/vsc';
+import numeral from 'numeral';
 
-const ICONS_MAP = {
-  Followers: TbUsers,
-  Repositories: RiGitRepositoryLine,
-  Issues: VscIssues,
-  Contributors: TbMoodHappy,
-};
-
-function GitHubStats({ iconName }) {
-  const Icon = ICONS_MAP[iconName];
-
+function GitHubStats({ stats: { forks, issues, stars } }) {
   return (
-    <div className="mr-2 flex items-center">
-      <Icon />
-      <p>
-        <span className="text-white">12</span> {iconName}
-      </p>
-    </div>
+    <>
+      <div className="mr-2 flex items-center">
+        <VscRepoForked color="#FFF" />
+        <p className="ml-1">{numeral(forks).format('0a')} Forks</p>
+      </div>
+      <div className="mr-2 flex items-center">
+        <VscIssues color="#FFF" />
+        <p className="ml-1">{numeral(issues).format('0a')} Issues</p>
+      </div>
+      <div className="mr-2 flex items-center">
+        <VscStarEmpty color="#FFF" />
+        <p className="ml-1">{numeral(stars).format('0a')} Stars</p>
+      </div>
+    </>
   );
 }
 

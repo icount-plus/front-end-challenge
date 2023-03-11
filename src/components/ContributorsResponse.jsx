@@ -15,11 +15,13 @@ function ContributorsResponse() {
               henriquemoreiraa
             </p>
             <div className="flex flex-wrap mt-2 md:mt-0 text-xs font-bold text-textGray ">
-              {['Followers', 'Repositories', 'Issues', 'Contributors'].map(
-                (name) => (
-                  <GitHubStats iconName={name} key={name} />
-                )
-              )}
+              <GitHubStats
+                stats={{
+                  forks: '11',
+                  issues: '11',
+                  stars: '11',
+                }}
+              />
             </div>
           </div>
         </div>
