@@ -1,0 +1,26 @@
+.nav-bar {
+    height: auto;
+    width: 100%;
+    background-color: #0079ae;
+}
+
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    padding: 20px 0 20px 30px;
+    color: rgb(7, 8, 80);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
+.nav-link:visited {
+    text-decoration: none;
+    color: rgb(7, 8, 80);
+}

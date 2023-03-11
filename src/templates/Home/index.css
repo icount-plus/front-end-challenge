@@ -1,0 +1,22 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5rem;
+}
+
+.search-container > h1 {
+  margin-bottom: 0.7rem;
+}
+
+.no-result {
+  font-size: 1.5rem;
+  margin-inline: auto;
+}
+
+.cross {
+  width: 1rem;
+  margin-left: .05rem;
+}
+
+
