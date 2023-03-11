@@ -8,6 +8,21 @@ export const ViewAnime = ({
 }: ViewAnimeProps) => {
   const coverStyles = { backgroundImage: `url(${cover})` };
 
+  const labels = [
+    {
+      name: 'Rank',
+      value: rank,
+    },
+    {
+      name: 'Popularity',
+      value: popularity,
+    },
+    {
+      name: 'Source',
+      value: source,
+    },
+  ];
+
   return (
     <div className="view-anime-container">
       <div>
@@ -23,21 +38,16 @@ export const ViewAnime = ({
       <i className="ri-close-line" onClick={() => onClose()} />
 
       <div className="badge-anime">
-        <div>
-          <p>Source</p>
-          <div />
-          <span>{source}</span>
-        </div>
-        <div>
-          <p>Rank</p>
-          <div />
-          <span>{rank}</span>
-        </div>
-        <div>
-          <p>Popularity</p>
-          <div />
-          <span> {popularity}</span>
-        </div>
+        {labels.map(
+          ({ value, name }, index) =>
+            value && (
+              <div key={index}>
+                <p>{name}</p>
+                <div />
+                <span> {value}</span>
+              </div>
+            )
+        )}
       </div>
     </div>
   );

@@ -6,7 +6,7 @@
   overflow-x: hidden;
 
   background: var(--background-color-down);
-  padding: 80px 20px 20px;
+  padding: 90px 20px 20px;
 
   @include scrollbar;
 
@@ -64,6 +64,6 @@
   }
 
   @include query('md') {
-    padding: 80px 80px 20px;
+    padding: 95px 95px 20px;
   }
 }

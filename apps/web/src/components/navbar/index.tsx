@@ -19,7 +19,7 @@ const Navbar = () => {
   const schema = yup.object().shape({
     search: yup.string().required(),
   });
-  const [openSearchModal, setOpenSearchModal] = useState(true);
+  const [openSearchModal, setOpenSearchModal] = useState(false);
   const { theme } = useSelector((state: AppState) => state);
   const dispatch = useDispatch();
 
