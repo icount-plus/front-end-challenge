@@ -4,6 +4,10 @@
 
 Faça o desafio Front-end e teste seus conhecimentos em React.
 
+## Projeto final
+
+Segue o link do meu projeto final: https://front-end-challenge-icount.netlify.app
+
 ## Requisitos
 
 - Proficiência em HTML, CSS
