@@ -1,6 +1,10 @@
+import { useContext } from 'react';
+import { ContributorsContext } from '../contexts/ContributorsContext';
 import GitHubStats from './GitHubStats';
 
 function ContributorsResponse() {
+  const { ContributorsData } = useContext(ContributorsContext);
+  console.log(ContributorsData);
   return (
     <div className="overflow-auto max-h-56">
       <div className="border-t border-bgblue2 px-4 pt-4 pb-2 mt-3">

@@ -20,7 +20,7 @@ export default function RepositoryProvider({ children }) {
 
   const value = useMemo(
     () => ({
-      data,
+      RepoData: data,
       error,
       isLoading,
       getInput,
