@@ -1,12 +1,16 @@
 import { lazy, useContext, Suspense } from 'react';
+import { RiGitRepositoryLine } from 'react-icons/ri';
 import Input from './components/Input';
 import Spinner from './components/Spinner/index';
 import { RepositoryContext } from './contexts/RepositoryContext';
+import useDataNotFound from './hooks/useDataNotFound';
 
 const Contributors = lazy(() => import('./components/Contributors'));
 
 function App() {
-  const { repoData } = useContext(RepositoryContext);
+  const { repoData, isLoading } = useContext(RepositoryContext);
+
+  const { secondLoading } = useDataNotFound({ isLoading });
 
   return (
     <div className="flex justify-center">
@@ -27,6 +31,19 @@ function App() {
           <Input button placeholder="Type a repository name..." />
         </section>
         <section className="w-full flex flex-col items-center">
+          {isLoading ? (
+            <Spinner />
+          ) : (
+            secondLoading &&
+            !repoData && (
+              <div className="flex items-center">
+                <RiGitRepositoryLine size="30px" />
+                <p className="ml-1 font-lalezar uppercase tracking-wide">
+                  Repository not found!
+                </p>
+              </div>
+            )
+          )}
           <Suspense fallback={<Spinner />}>
             {repoData && <Contributors />}
           </Suspense>

@@ -7,11 +7,8 @@ import ContributorsProvider from '../contexts/ContributorsContext';
 import Spinner from './Spinner';
 
 function Contributors() {
-  const { repoData, isLoading } = useContext(RepositoryContext);
+  const { isLoading } = useContext(RepositoryContext);
 
-  if (!repoData) {
-    return null;
-  }
   if (isLoading) {
     return <Spinner />;
   }
