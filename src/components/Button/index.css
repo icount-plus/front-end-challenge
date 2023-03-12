@@ -8,6 +8,12 @@
     margin-top: 2.5rem;
 }
 
+.btn-load:hover {
+    background-color: rgb(163, 247, 170);
+    color: green;
+    transition: .5s;
+}
+
 .btn-load:disabled {
     background: #888;
     cursor: not-allowed;

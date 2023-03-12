@@ -12,3 +12,24 @@ body {
   margin-inline: 4rem;
   margin-block: 4rem; 
 }
+
+body::-webkit-scrollbar {
+  width: .95rem;               
+}
+
+body::-webkit-scrollbar-track {
+  background: white;        
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #6E8B24;           
+  border: 3px solid white;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    margin-inline: 3rem;
+    margin-block: 3rem; 
+  }
+}

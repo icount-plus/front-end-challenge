@@ -17,7 +17,27 @@
     flex-direction: column;
 }
 
-.text-container {
+.text-container p{
     font-size: 1.25rem;
     text-align: justify;
+}
+
+@media screen and (max-width: 1150px) {
+    .title {
+        font-size: 2.35rem;
+    }
+
+    .text-container p{
+        font-size: 1.15rem;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    .title {
+        font-size: 1.95rem;
+    }
+
+    .text-container p{
+        font-size: 1.05rem;
+    }
 }

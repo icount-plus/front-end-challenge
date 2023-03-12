@@ -68,3 +68,46 @@
     color: darkcyan;
     transition: .5s;
 }
+
+@media screen and (max-width: 1150px) {
+    .list-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3.5rem;
+    }
+
+    .card-item h1 {
+        font-size: 1.65rem;
+    }
+
+    .card-item h2 {
+        font-size: 1.25rem;
+        color: darkslateblue;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
+
+    .card-item p {
+        font-size: .95rem;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    .list-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card-item h1 {
+        font-size: 1.45rem;
+    }
+
+    .card-item h2 {
+        font-size: 1.15rem;
+        color: darkslateblue;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
+
+    .card-item p {
+        font-size: .95rem;
+    }
+}

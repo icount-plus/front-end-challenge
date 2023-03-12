@@ -11,7 +11,7 @@
 
 .no-result {
   font-size: 1.5rem;
-  margin-inline: auto;
+  text-align: center;
 }
 
 .cross {
@@ -19,4 +19,40 @@
   margin-left: .05rem;
 }
 
+@media screen and (max-width: 1150px) {
+  .search-container {
+    padding-bottom: 4.5rem;
+  }
 
+  .search-container > h1 {
+    margin-bottom: 0.7rem;
+    font-size: 1.85rem;
+  }
+
+  .no-result {
+    font-size: 1.35rem;
+  }
+
+  .cross {
+    width: .85rem;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .search-container {
+    padding-bottom: 2.95rem;
+  }
+
+  .search-container > h1 {
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+  }
+
+  .no-result {
+    font-size: 1.15rem;
+  }
+
+  .cross {
+    width: .65rem;
+  }
+}
