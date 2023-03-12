@@ -28,7 +28,7 @@ function App() {
               An easy way to find an open source contributor from a repository
             </p>
           </div>
-          <Input placeholder="Type a repository name..." />
+          <Input button placeholder="Type a repository name..." />
         </section>
         <section className="w-full flex flex-col items-center">
           {isLoading ? (
