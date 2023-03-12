@@ -7,7 +7,14 @@ import {
 import numeral from 'numeral';
 
 function GitHubStats({ stats: { forks, issues, stars, commits } }) {
-  return !commits ? (
+  return commits ? (
+    <div className="mr-2 flex items-center">
+      <VscGitCommit color="#FFF" />
+      <p className="ml-1">
+        {numeral(commits).format('0a')} Commits in this repository
+      </p>
+    </div>
+  ) : (
     <>
       <div className="mr-2 flex items-center">
         <VscRepoForked color="#FFF" />
@@ -22,13 +29,6 @@ function GitHubStats({ stats: { forks, issues, stars, commits } }) {
         <p className="ml-1">{numeral(stars).format('0a')} Stars</p>
       </div>
     </>
-  ) : (
-    <div className="mr-2 flex items-center">
-      <VscGitCommit color="#FFF" />
-      <p className="ml-1">
-        {numeral(commits).format('0a')} Commits in this repository
-      </p>
-    </div>
   );
 }
 

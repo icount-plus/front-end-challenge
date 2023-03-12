@@ -1,26 +1,24 @@
 import { createContext, useContext, useMemo } from 'react';
 import useSWRInfinite from 'swr/infinite';
-import fetcher from '../api/contributorsApi';
+import { fetcher, getKeyContributors } from '../api/contributorsApi';
 import { RepositoryContext } from './RepositoryContext';
 
 export const ContributorsContext = createContext(null);
 
 export default function ContributorsProvider({ children }) {
-  const { RepoData } = useContext(RepositoryContext);
+  const { repoData } = useContext(RepositoryContext);
 
   const { data, error, isLoading, size, setSize } = useSWRInfinite(
-    (index) =>
-      RepoData
-        ? `/repos/${RepoData.full_name}/contributors?per_page=5&page=${
-            index + 1
-          }`
-        : null,
+    repoData
+      ? (index, prevPage) =>
+          getKeyContributors(index, prevPage, repoData.full_name)
+      : null,
     fetcher
   );
 
   const value = useMemo(
     () => ({
-      ContributorsData: data,
+      contributorsData: data,
       error,
       isLoading,
       size,

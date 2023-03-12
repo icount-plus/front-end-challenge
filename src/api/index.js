@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const url = import.meta.env.VITE_GITHUB_API_URL;
-const authKey = import.meta.env.GITHUB_AUTH_KEY;
+const authKey = import.meta.env.VITE_GITHUB_AUTH_KEY;
 
 const api = axios.create({
   baseURL: url,

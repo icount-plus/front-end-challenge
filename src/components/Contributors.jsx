@@ -4,12 +4,16 @@ import FilterContributors from './FilterContributors';
 import Repositories from './Repositories';
 import ContributorsResponse from './ContributorsResponse';
 import ContributorsProvider from '../contexts/ContributorsContext';
+import Spinner from './Spinner';
 
 function Contributors() {
-  const { RepoData } = useContext(RepositoryContext);
+  const { repoData, isLoading } = useContext(RepositoryContext);
 
-  if (!RepoData) {
+  if (!repoData) {
     return null;
+  }
+  if (isLoading) {
+    return <Spinner />;
   }
 
   return (

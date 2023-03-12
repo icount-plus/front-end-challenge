@@ -1,10 +1,20 @@
+import { lazy, useContext, Suspense } from 'react';
 import Input from './components/Input';
-import Contributors from './components/Contributors';
+import Spinner from './components/Spinner/index';
+import { RepositoryContext } from './contexts/RepositoryContext';
+
+const Contributors = lazy(() => import('./components/Contributors'));
 
 function App() {
+  const { repoData } = useContext(RepositoryContext);
+
   return (
     <div className="flex justify-center">
-      <div className=" max-w-7xl py-10 w-screen flex flex-col items-center justify-center">
+      <div
+        className={`${
+          repoData ? 'h-full' : 'h-screen'
+        } max-w-7xl py-10 w-screen flex flex-col items-center justify-center`}
+      >
         <section>
           <div>
             <h1 className="text-white text-center text-3xl sm:text-5xl md:text-6xl lg:text-8xl 2xl:text-9xl font-lalezar">
@@ -17,7 +27,9 @@ function App() {
           <Input button placeholder="Type a repository name..." />
         </section>
         <section className="w-full flex flex-col items-center">
-          <Contributors />
+          <Suspense fallback={<Spinner />}>
+            {repoData && <Contributors />}
+          </Suspense>
         </section>
       </div>
     </div>

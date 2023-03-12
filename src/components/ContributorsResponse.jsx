@@ -2,19 +2,20 @@ import { useContext } from 'react';
 import { ContributorsContext } from '../contexts/ContributorsContext';
 import useInfiniteScroll from '../hooks/useInfiniteScroll';
 import GitHubStats from './GitHubStats';
+import Spinner from './Spinner';
 
 function ContributorsResponse() {
-  const { ContributorsData, isLoading } = useContext(ContributorsContext);
+  const { contributorsData, isLoading } = useContext(ContributorsContext);
   useInfiniteScroll();
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
 
   return (
     <div className="overflow-auto max-h-64 h-full">
       {/* eslint-disable-next-line array-callback-return */}
-      {ContributorsData.map((page) =>
+      {contributorsData.map((page) =>
         page.map((contributor) => (
           <div
             key={contributor.id}

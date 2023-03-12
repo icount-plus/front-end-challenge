@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import { ContributorsContext } from '../contexts/ContributorsContext';
 
 export default function useInfiniteScroll() {
-  const { setSize, size, ContributorsData } = useContext(ContributorsContext);
+  const { setSize, size, contributorsData } = useContext(ContributorsContext);
 
   // eslint-disable-next-line consistent-return
   useEffect(() => {
@@ -15,5 +15,5 @@ export default function useInfiniteScroll() {
       observer.observe(document.querySelector('#loadMore'));
       return () => observer.disconnect();
     }
-  }, [ContributorsData]);
+  }, [contributorsData]);
 }

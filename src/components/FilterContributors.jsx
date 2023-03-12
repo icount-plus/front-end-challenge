@@ -9,18 +9,10 @@ function FilterContributors() {
     <div className=" flex items-center max-w-2xl w-full bg-bgGray rounded-t-lg rounded-tl-lg py-1 px-2">
       {!isBoolean && (
         <div className="flex w-full sm:w-2/4">
-          <button type="button">
-            <Button
-              text="Top Contributors"
-              colors={['bgButtonBlue', 'bdButtonBlue']}
-            />
-          </button>
-          <button type="button">
-            <Button
-              text="All Contributors"
-              colors={['bgButtonBlue', 'bdButtonBlue']}
-            />
-          </button>
+          <Button
+            text="Sorted by number of commits"
+            colors={['bgButtonBlue', 'bdButtonBlue']}
+          />
         </div>
       )}
       <div
