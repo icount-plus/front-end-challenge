@@ -15,7 +15,7 @@ function Contributors() {
   return (
     <ContributorsProvider>
       <FilterContributors />
-      <div className="flex flex-col justify-center max-w-2xl w-full sm:w-full bg-bgblue rounded-b-lg rounded-bl-lg border-x border-b border-bgblue2  py-3">
+      <div className="flex flex-col justify-center max-w-2xl w-full sm:w-full bg-bgblue rounded-b-lg rounded-bl-lg border-x border-b border-bgblue2  pt-3">
         <Repositories />
         <ContributorsResponse />
       </div>

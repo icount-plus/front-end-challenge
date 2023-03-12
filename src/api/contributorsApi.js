@@ -1,6 +1,6 @@
 import api from '.';
 
-export const fetcher = async (key) => {
+const fetcher = async (key) => {
   if (key) {
     const { data } = await api.get(`${key}`);
     return data;
@@ -9,5 +9,7 @@ export const fetcher = async (key) => {
   return null;
 };
 
-export const getKeyContributors = ({ repo }) =>
-  `/repos/${repo}/contributors?per_page=5&page=1`;
+export default fetcher;
+
+// export const getKeyContributors = (pageIndex) =>
+//   `/repos/${repo}/contributors?per_page=5&page=${pageIndex}`;

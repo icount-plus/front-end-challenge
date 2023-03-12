@@ -1,17 +1,10 @@
-import { useContext } from 'react';
-import { RepositoryContext } from './contexts/RepositoryContext';
 import Input from './components/Input';
 import Contributors from './components/Contributors';
 
 function App() {
-  const { data } = useContext(RepositoryContext);
   return (
     <div className="flex justify-center">
-      <div
-        className={`${
-          !data && 'h-screen'
-        } max-w-7xl py-10 w-screen flex flex-col items-center justify-center`}
-      >
+      <div className=" max-w-7xl py-10 w-screen flex flex-col items-center justify-center">
         <section>
           <div>
             <h1 className="text-white text-center text-3xl sm:text-5xl md:text-6xl lg:text-8xl 2xl:text-9xl font-lalezar">
@@ -23,7 +16,7 @@ function App() {
           </div>
           <Input button placeholder="Type a repository name..." />
         </section>
-        <section className="w-full flex flex-col items-center ">
+        <section className="w-full flex flex-col items-center">
           <Contributors />
         </section>
       </div>

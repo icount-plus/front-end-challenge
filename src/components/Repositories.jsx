@@ -10,7 +10,7 @@ function Repositories() {
   }
 
   return (
-    <div className="flex flex-col md:flex-row md:items-center pr-1 w-full h-full">
+    <div className="flex flex-col md:flex-row md:items-center pr-1 w-full h-full border-b border-bgblue2">
       <a
         href={RepoData.owner.html_url}
         target="_blank"
