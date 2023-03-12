@@ -5,8 +5,13 @@ import GitHubStats from './GitHubStats';
 import Spinner from './Spinner';
 
 function ContributorsResponse() {
-  const { contributorsData, isLoading } = useContext(ContributorsContext);
+  const { contributorsData, isLoading, contributor } =
+    useContext(ContributorsContext);
   useInfiniteScroll();
+
+  if (!contributorsData) {
+    return contributor && <p>{contributor.author.login}</p>;
+  }
 
   if (isLoading) {
     return <Spinner />;
@@ -16,6 +21,7 @@ function ContributorsResponse() {
     <div className="overflow-auto max-h-64 h-full">
       {/* eslint-disable-next-line array-callback-return */}
       {contributorsData.map((page) =>
+        // eslint-disable-next-line no-shadow
         page.map((contributor) => (
           <div
             key={contributor.id}
