@@ -27,6 +27,7 @@ function ContributorsResponse() {
                   src={contributor.avatar_url}
                   className="w-11 rounded-full mr-3"
                   alt="contributor"
+                  loading="lazy"
                 />
               </a>
               <div>

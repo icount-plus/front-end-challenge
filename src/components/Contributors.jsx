@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import useBoolean from '../hooks/useBoolean';
 import { RepositoryContext } from '../contexts/RepositoryContext';
 import FilterContributors from './FilterContributors';
 import Repositories from './Repositories';
@@ -7,6 +8,7 @@ import ContributorsProvider from '../contexts/ContributorsContext';
 import Spinner from './Spinner';
 
 function Contributors() {
+  const { isBoolean, setIsBoolean } = useBoolean();
   const { isLoading } = useContext(RepositoryContext);
 
   if (isLoading) {
@@ -15,9 +17,9 @@ function Contributors() {
 
   return (
     <ContributorsProvider>
-      <FilterContributors />
+      <FilterContributors isBoolean={isBoolean} setIsBoolean={setIsBoolean} />
       <div className="flex flex-col justify-center max-w-2xl w-full sm:w-full bg-bgblue rounded-b-lg rounded-bl-lg border-x border-b border-bgblue2  pt-3">
-        <Repositories />
+        {isBoolean && <Repositories />}
         <ContributorsResponse />
       </div>
     </ContributorsProvider>
