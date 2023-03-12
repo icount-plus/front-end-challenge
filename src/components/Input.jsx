@@ -2,7 +2,7 @@ import { useContext, useRef } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { RepositoryContext } from '../contexts/RepositoryContext';
 import Button from './Button';
-import useEnterPress from '../hooks/useEnterPress';
+import enterPress from '../utils/enterPress';
 
 function Input({ placeholder }) {
   const { getInput } = useContext(RepositoryContext);
@@ -16,7 +16,7 @@ function Input({ placeholder }) {
         <input
           type="text"
           ref={inputRef}
-          onKeyDown={(e) => useEnterPress({ e, getInput, inputRef, checkRef })}
+          onKeyDown={(e) => enterPress({ e, getInput, inputRef, checkRef })}
           placeholder={placeholder}
           className=" w-full p-2 bg-transparent rounded-lg focus:outline-none text-xs sm:text-base"
         />
