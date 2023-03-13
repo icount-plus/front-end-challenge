@@ -27,7 +27,7 @@
 
 <h3 id="requisitos">🪛 Prerequisites to run the project</h3>
 Before starting, you will need to have the following tools installed on your machine:
-<a href="https://git-scm.com">Git</a>, <a href="https://nodejs.org/en/">Node.js</a>. 
+<a href="https://git-scm.com">Git</a>, <a href="https://nodejs.org/en/">Node.js</a>, <a href="https://yarnpkg.com/">Yarn</a>. 
 
 ---
 
