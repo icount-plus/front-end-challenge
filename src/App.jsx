@@ -1,6 +1,6 @@
 import { lazy, useContext, Suspense } from 'react';
-import { RiGitRepositoryLine } from 'react-icons/ri';
 import Input from './components/Input';
+import NotFound from './components/NotFound.';
 import Spinner from './components/Spinner/index';
 import { RepositoryContext } from './contexts/RepositoryContext';
 import useDataNotFound from './hooks/useDataNotFound';
@@ -35,14 +35,7 @@ function App() {
             <Spinner />
           ) : (
             secondLoading &&
-            !repoData && (
-              <div className="flex items-center">
-                <RiGitRepositoryLine size="30px" />
-                <p className="ml-1 font-lalezar uppercase tracking-wide">
-                  Repository not found!
-                </p>
-              </div>
-            )
+            !repoData && <NotFound>Repository not found!</NotFound>
           )}
           <Suspense fallback={<Spinner />}>
             {repoData && <Contributors />}

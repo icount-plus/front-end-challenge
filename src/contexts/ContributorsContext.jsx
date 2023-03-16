@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useContext, useMemo, useState } from 'react';
 import useSWRInfinite from 'swr/infinite';
 import { fetcher, getKeyContributors } from '../api/contributorsApi';
 import { RepositoryContext } from './RepositoryContext';
@@ -7,8 +7,11 @@ export const ContributorsContext = createContext(null);
 
 export default function ContributorsProvider({ children }) {
   const [contributor, setContributor] = useState(null);
+  const [loadingContributor, setLoadingContributor] = useState(false);
+  const [errorSearch, setErrorSearch] = useState(0);
+
   const { repoData } = useContext(RepositoryContext);
-  console.log(contributor);
+
   const { data, error, isLoading, size, setSize } = useSWRInfinite(
     repoData
       ? (index, prevPage) =>
@@ -17,10 +20,6 @@ export default function ContributorsProvider({ children }) {
     fetcher
   );
 
-  useEffect(() => {
-    setContributor(null);
-  }, [repoData]);
-
   const value = useMemo(
     () => ({
       contributorsData: contributor ? undefined : data,
@@ -28,10 +27,14 @@ export default function ContributorsProvider({ children }) {
       isLoading,
       size,
       contributor,
+      loadingContributor,
+      errorSearch,
       setSize,
       setContributor,
+      setLoadingContributor,
+      setErrorSearch,
     }),
-    [data, error, isLoading, size, contributor]
+    [data, error, isLoading, size, contributor, loadingContributor, errorSearch]
   );
 
   return (

@@ -3,14 +3,16 @@ import { ContributorsContext } from '../contexts/ContributorsContext';
 import useInfiniteScroll from '../hooks/useInfiniteScroll';
 import GitHubStats from './GitHubStats';
 import Spinner from './Spinner';
+import SingleContributor from './SingleContributor';
 
 function ContributorsResponse() {
   const { contributorsData, isLoading, contributor } =
     useContext(ContributorsContext);
+
   useInfiniteScroll();
 
-  if (!contributorsData) {
-    return contributor && <p>{contributor.author.login}</p>;
+  if (!contributorsData && contributor) {
+    return <SingleContributor />;
   }
 
   if (isLoading) {
