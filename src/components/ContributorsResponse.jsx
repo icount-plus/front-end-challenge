@@ -4,10 +4,14 @@ import useInfiniteScroll from '../hooks/useInfiniteScroll';
 import GitHubStats from './GitHubStats';
 import Spinner from './Spinner';
 import SingleContributor from './SingleContributor';
+import ContributorProfile from './ContributorProfile';
+import useMousePosition from '../hooks/useMousePosition';
 
 function ContributorsResponse() {
-  const { contributorsData, isLoading, contributor } =
+  const { contributorsData, isLoading, contributor, setContributorProfile } =
     useContext(ContributorsContext);
+  const { handleOnMouseMove, position, setIsBoolean, isBoolean } =
+    useMousePosition();
 
   useInfiniteScroll();
 
@@ -21,6 +25,19 @@ function ContributorsResponse() {
 
   return (
     <div className="overflow-auto max-h-64 h-full">
+      {isBoolean && (
+        <div
+          onMouseEnter={() => setIsBoolean(true)}
+          onMouseLeave={() => setIsBoolean(false)}
+          className="absolute border-b bg-bgGray border-bgblue2 p-4 rounded-lg"
+          style={{
+            left: position.x,
+            top: position.y,
+          }}
+        >
+          <ContributorProfile />
+        </div>
+      )}
       {/* eslint-disable-next-line array-callback-return */}
       {contributorsData.map((page) =>
         // eslint-disable-next-line no-shadow
@@ -36,6 +53,14 @@ function ContributorsResponse() {
                   className="w-11 rounded-full mr-3"
                   alt="contributor"
                   loading="lazy"
+                  onMouseEnter={(e) =>
+                    handleOnMouseMove(
+                      e,
+                      contributor.login,
+                      setContributorProfile
+                    )
+                  }
+                  onMouseLeave={() => setIsBoolean(false)}
                 />
               </a>
               <div>

@@ -4,10 +4,18 @@ import ApiRateLimit from './ApiRateLimit';
 import GitHubStats from './GitHubStats';
 import NotFound from './NotFound.';
 import Spinner from './Spinner';
+import useMousePosition from '../hooks/useMousePosition';
+import ContributorProfile from './ContributorProfile';
 
 function SingleContributor() {
-  const { contributor, loadingContributor, errorSearch } =
-    useContext(ContributorsContext);
+  const { handleOnMouseMove, position, setIsBoolean, isBoolean } =
+    useMousePosition();
+  const {
+    contributor,
+    setContributorProfile,
+    loadingContributor,
+    errorSearch,
+  } = useContext(ContributorsContext);
 
   if (loadingContributor) {
     return (
@@ -30,6 +38,19 @@ function SingleContributor() {
 
   return (
     <div className="overflow-auto max-h-64 h-full">
+      {isBoolean && (
+        <div
+          onMouseEnter={() => setIsBoolean(true)}
+          onMouseLeave={() => setIsBoolean(false)}
+          className="absolute border-b bg-bgGray border-bgblue2 p-4 rounded-lg"
+          style={{
+            left: position.x,
+            top: position.y,
+          }}
+        >
+          <ContributorProfile />
+        </div>
+      )}
       <div
         key={contributor.items[0]?.author.id}
         className="border-b border-bgblue2 px-4 pb-4 pt-1 mt-3"
@@ -45,6 +66,14 @@ function SingleContributor() {
               className="w-11 rounded-full mr-3"
               alt="contributor"
               loading="lazy"
+              onMouseEnter={(e) =>
+                handleOnMouseMove(
+                  e,
+                  contributor.items[0]?.author.login,
+                  setContributorProfile
+                )
+              }
+              onMouseLeave={() => setIsBoolean(false)}
             />
           </a>
           <div>

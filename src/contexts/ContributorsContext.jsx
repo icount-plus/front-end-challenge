@@ -1,11 +1,17 @@
 import { createContext, useContext, useMemo, useState } from 'react';
 import useSWRInfinite from 'swr/infinite';
-import { fetcher, getKeyContributors } from '../api/contributorsApi';
+import useSWR from 'swr';
+import {
+  fetcher,
+  getKeyContributors,
+  getKeyContributor,
+} from '../api/contributorsApi';
 import { RepositoryContext } from './RepositoryContext';
 
 export const ContributorsContext = createContext(null);
 
 export default function ContributorsProvider({ children }) {
+  const [contributorProfile, setContributorProfile] = useState(null);
   const [contributor, setContributor] = useState(null);
   const [loadingContributor, setLoadingContributor] = useState(false);
   const [errorSearch, setErrorSearch] = useState(0);
@@ -20,6 +26,11 @@ export default function ContributorsProvider({ children }) {
     fetcher
   );
 
+  const { data: profileData, isLoading: loadingProfile } = useSWR(
+    contributorProfile ? getKeyContributor(contributorProfile) : null,
+    fetcher
+  );
+
   const value = useMemo(
     () => ({
       contributorsData: contributor ? undefined : data,
@@ -27,14 +38,27 @@ export default function ContributorsProvider({ children }) {
       isLoading,
       size,
       contributor,
+      profileData,
+      loadingProfile,
       loadingContributor,
       errorSearch,
       setSize,
       setContributor,
       setLoadingContributor,
       setErrorSearch,
+      setContributorProfile,
     }),
-    [data, error, isLoading, size, contributor, loadingContributor, errorSearch]
+    [
+      data,
+      error,
+      isLoading,
+      size,
+      contributor,
+      profileData,
+      loadingProfile,
+      loadingContributor,
+      errorSearch,
+    ]
   );
 
   return (
