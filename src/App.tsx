@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { searchNews } from "./services/news";
+import { RoutesApp } from "routes/Routes";
 
 function App() {
+  const [data, setData] = useState();
+
+  // useEffect(() => {
+  //   searchNews(setData);
+  // }, [data, setData]);
+
   return (
     <div className="App">
-      <header className="App-header">nada</header>
+      <RoutesApp />
     </div>
   );
 }
