@@ -18,7 +18,10 @@ export const searchNews = async (
 ) => {
   await newsService
     .get("/search/v2/articlesearch.json", { params: { q: search } })
-    .then((resp) => setData(resp.data));
+    .then((resp) => setData(resp.data))
+    .catch((resp) =>
+      alert("Você precisa fazer uma pesquisa em inglês!" + resp)
+    );
 };
 export const topNewsService = async (
   setData: Dispatch<SetStateAction<ITopNews | undefined>>
