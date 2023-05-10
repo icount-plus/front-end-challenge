@@ -8,7 +8,7 @@ export const RoutesApp = () => {
     <BrowserRouter>
       <Routes>
         <Route element={<Home />} path="/" />
-        <Route element={<NewsList />} path="/newslist" />
+        <Route element={<NewsList />} path="/newslist/:search" />
       </Routes>
     </BrowserRouter>
   );

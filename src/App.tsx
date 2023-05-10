@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { searchNews } from "./services/news";
+import React from "react";
 import { RoutesApp } from "routes/Routes";
+import { SearchNewsInputContextProvider } from "contexts/SearchNewsInputContext";
+import { SearchNewsListContextProvider } from "contexts/SearchNewsContextList";
 
 function App() {
-  const [data, setData] = useState();
-
-  // useEffect(() => {
-  //   searchNews(setData);
-  // }, [data, setData]);
-
   return (
     <div className="App">
-      <RoutesApp />
+      <SearchNewsInputContextProvider>
+        <SearchNewsListContextProvider>
+          <RoutesApp />
+        </SearchNewsListContextProvider>
+      </SearchNewsInputContextProvider>
     </div>
   );
 }

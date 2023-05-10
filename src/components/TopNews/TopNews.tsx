@@ -1,15 +1,19 @@
-import mock from "mocks/dataTopNews.json";
 import { NewsCard } from "components/NewsCard/NewsCard";
+import { useEffect, useState } from "react";
+import { ITopNews } from "interfaces/ITopNews";
+import { topNewsService } from "services/news";
 
 export function TopNews() {
-  const data = mock;
-
+  const [data, setData] = useState<ITopNews>();
+  useEffect(() => {
+    if (typeof data === "undefined") {
+      topNewsService(setData);
+    }
+  }, [data, setData]);
   return (
     <>
-      {data.results.map((data) => {
-        console.log();
-
-        return data.media[0] ? (
+      {data?.results.map((data) => {
+        return data.media.length ? (
           <NewsCard
             image_src={data.media[0]["media-metadata"][2].url}
             image_alt="v"

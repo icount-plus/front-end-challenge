@@ -1,13 +1,22 @@
-import mock from "mocks/dataSearch.json";
 import { NewsCard } from "components/NewsCard/NewsCard";
+import { useSearchNewsListContext } from "contexts/SearchNewsContextList";
+import { searchNews } from "services/news";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 export function NewsSearch() {
-  const data = mock;
+  const { searchNewsList, setSearchNewsList } = useSearchNewsListContext();
   const STATIC_URL = "https://static01.nyt.com/";
+  const { search } = useParams();
+
+  useEffect(() => {
+    searchNews(setSearchNewsList, search);
+  }, [search, setSearchNewsList]);
+
   return (
     <>
-      {data.response.docs.map((data) => {
-        return (
+      {searchNewsList?.response.docs.map((data) => {
+        return data.multimedia.length ? (
           <NewsCard
             image_src={`${STATIC_URL}${data.multimedia[0].url}`}
             image_alt=""
@@ -17,7 +26,7 @@ export function NewsSearch() {
             web_url={data.web_url}
             key={data.web_url}
           />
-        );
+        ) : null;
       })}
     </>
   );
