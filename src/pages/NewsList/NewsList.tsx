@@ -1,7 +1,7 @@
 import { Header } from "components/Header/Header";
 import "./styles.scss";
 import { NewsSearch } from "components/NewsSearch/NewsSearch";
-export function NewsList() {
+export default function NewsList() {
   return (
     <div className="container">
       <Header />

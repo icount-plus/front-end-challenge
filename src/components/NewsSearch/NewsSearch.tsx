@@ -3,6 +3,7 @@ import { useSearchNewsListContext } from "contexts/SearchNewsContextList";
 import { searchNews } from "services/news";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import { Loading } from "components/Loading/Loading";
 
 export function NewsSearch() {
   const { searchNewsList, setSearchNewsList } = useSearchNewsListContext();
@@ -13,7 +14,7 @@ export function NewsSearch() {
     searchNews(setSearchNewsList, search);
   }, [search, setSearchNewsList]);
 
-  return (
+  return searchNewsList?.response.docs.length ? (
     <>
       {searchNewsList?.response.docs.map((data) => {
         return data.multimedia.length ? (
@@ -29,5 +30,7 @@ export function NewsSearch() {
         ) : null;
       })}
     </>
+  ) : (
+    <Loading />
   );
 }
