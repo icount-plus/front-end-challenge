@@ -1,5 +1,5 @@
-import "./styles.scss";
-import { getDate } from "utils/getDate";
+import './styles.scss';
+import { getDate } from 'utils/getDate';
 
 type NewsCardProps = {
   title: string;
@@ -15,16 +15,14 @@ export function NewsCard({
   image_src,
   pub_date,
   subtitle,
-  web_url,
+  web_url
 }: NewsCardProps) {
   return (
     <>
       <div className="card" data-testid="news-card">
         <img src={image_src} alt={image_alt} className="card__image" />
         <div className="card__content">
-          <p className="card__content-publishedTime">
-            Publicado em: {getDate(pub_date)}
-          </p>
+          <p className="card__content-publishedTime">Publicado em: {getDate(pub_date)}</p>
           <a className="card__content-title" href={web_url}>
             {title}
           </a>

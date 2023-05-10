@@ -1,5 +1,5 @@
-import { SearchNews } from "components/SearchNews/SearchNews";
-import "./styles.scss";
+import { SearchNews } from 'components/SearchNews/SearchNews';
+import './styles.scss';
 export function Header() {
   return (
     <header className="headercontainer">

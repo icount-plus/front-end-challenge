@@ -1,6 +1,6 @@
-import "./styles.scss";
-import { Header } from "components/Header/Header";
-import { TopNews } from "components/TopNews/TopNews";
+import './styles.scss';
+import { Header } from 'components/Header/Header';
+import { TopNews } from 'components/TopNews/TopNews';
 export function Home() {
   return (
     <div className="container">

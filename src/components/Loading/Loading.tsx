@@ -1,4 +1,4 @@
-import "./styles.scss";
+import './styles.scss';
 export function Loading() {
   return (
     <div className="spinner" data-testid="loading">

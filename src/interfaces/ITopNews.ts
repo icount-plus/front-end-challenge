@@ -10,7 +10,7 @@ export interface ITopNews {
       published_date: string;
       media: [
         {
-          "media-metadata": [{ url: string }, { url: string }, { url: string }];
+          'media-metadata': [{ url: string }, { url: string }, { url: string }];
         }
       ];
     }

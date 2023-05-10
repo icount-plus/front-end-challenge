@@ -1,13 +1,13 @@
-import { NewsCard } from "components/NewsCard/NewsCard";
-import { useSearchNewsListContext } from "contexts/SearchNewsContextList";
-import { searchNews } from "services/news";
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { Loading } from "components/Loading/Loading";
+import { NewsCard } from 'components/NewsCard/NewsCard';
+import { useSearchNewsListContext } from 'contexts/SearchNewsContextList';
+import { searchNews } from 'services/news';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Loading } from 'components/Loading/Loading';
 
 export function NewsSearch() {
   const { searchNewsList, setSearchNewsList } = useSearchNewsListContext();
-  const STATIC_URL = "https://static01.nyt.com/";
+  const STATIC_URL = 'https://static01.nyt.com/';
   const { search } = useParams();
 
   useEffect(() => {

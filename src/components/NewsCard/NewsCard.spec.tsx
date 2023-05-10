@@ -1,6 +1,6 @@
-import { RenderResult, render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
-import { NewsCard } from "./NewsCard";
+import { RenderResult, render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import { NewsCard } from './NewsCard';
 
 const container = (): RenderResult =>
   render(
@@ -14,27 +14,24 @@ const container = (): RenderResult =>
     />
   );
 
-describe("Is render Header", () => {
-  it("is render title", () => {
+describe('Is render Header', () => {
+  it('is render title', () => {
     container();
-    const TITLE = screen.getByText("Test title");
+    const TITLE = screen.getByText('Test title');
     expect(TITLE).toBeInTheDocument();
   });
-  it("is render subtitle", () => {
+  it('is render subtitle', () => {
     container();
-    const SUBTITLE = screen.getByText("Test subtitle");
+    const SUBTITLE = screen.getByText('Test subtitle');
     expect(SUBTITLE).toBeInTheDocument();
   });
-  it("is render pubDate", () => {
+  it('is render pubDate', () => {
     container();
-    const PUBDATE = screen.getByText("Publicado em: 09/05/2022");
+    const PUBDATE = screen.getByText('Publicado em: 09/05/2022');
     expect(PUBDATE).toBeInTheDocument();
   });
-  it("is render image", () => {
+  it('is render image', () => {
     container();
-    expect(screen.getByAltText("image")).toHaveAttribute(
-      "src",
-      "https://image1.jpg"
-    );
+    expect(screen.getByAltText('image')).toHaveAttribute('src', 'https://image1.jpg');
   });
 });

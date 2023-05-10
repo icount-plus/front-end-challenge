@@ -1,12 +1,12 @@
-import { ISearchNewsList } from "interfaces/ISearchNewsList";
+import { ISearchNewsList } from 'interfaces/ISearchNewsList';
 import React, {
   createContext,
   Dispatch,
   ReactElement,
   SetStateAction,
   useContext,
-  useState,
-} from "react";
+  useState
+} from 'react';
 
 type SearchNewsListContextProps = {
   searchNewsList: ISearchNewsList | undefined;
@@ -17,22 +17,17 @@ type ListContextProviderProps = {
 };
 const INITIAL_STATE: SearchNewsListContextProps = {
   searchNewsList: undefined,
-  setSearchNewsList: () => {},
+  setSearchNewsList: () => {}
 };
 
-export const SearchNewsListContext =
-  createContext<SearchNewsListContextProps>(INITIAL_STATE);
+export const SearchNewsListContext = createContext<SearchNewsListContextProps>(INITIAL_STATE);
 
 export const useSearchNewsListContext = () => useContext(SearchNewsListContext);
 
-export const SearchNewsListContextProvider = ({
-  children,
-}: ListContextProviderProps) => {
+export const SearchNewsListContextProvider = ({ children }: ListContextProviderProps) => {
   const [searchNewsList, setSearchNewsList] = useState<ISearchNewsList>();
   return (
-    <SearchNewsListContext.Provider
-      value={{ searchNewsList, setSearchNewsList }}
-    >
+    <SearchNewsListContext.Provider value={{ searchNewsList, setSearchNewsList }}>
       {children}
     </SearchNewsListContext.Provider>
   );

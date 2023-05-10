@@ -1,7 +1,7 @@
-import { RenderResult, render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
-import { SearchNews } from "./SearchNews";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { RenderResult, render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import { SearchNews } from './SearchNews';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const container = (): RenderResult =>
   render(
@@ -12,10 +12,10 @@ const container = (): RenderResult =>
     </BrowserRouter>
   );
 
-describe("Is render SearchNews", () => {
+describe('Is render SearchNews', () => {
   container();
-  it("Is render placeholder", () => {
-    const PLACEHOLDER = screen.getByPlaceholderText("Pesquise por noticias");
+  it('Is render placeholder', () => {
+    const PLACEHOLDER = screen.getByPlaceholderText('Pesquise por noticias');
     expect(PLACEHOLDER).toBeInTheDocument();
   });
 });

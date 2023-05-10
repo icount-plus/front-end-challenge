@@ -82,11 +82,7 @@
       "type": "Article",
       "title": "Coronation Fashion: Queen Camilla, Princess Catherine and Clothes Full of Meaning",
       "abstract": "Why a dress is never just a dress at a major occasion of State.",
-      "des_facet": [
-        "Royal Families",
-        "Fashion and Apparel",
-        "your-feed-fashion"
-      ],
+      "des_facet": ["Royal Families", "Fashion and Apparel", "your-feed-fashion"],
       "org_facet": [],
       "per_facet": [
         "Charles III, King of the United Kingdom",
@@ -352,11 +348,7 @@
         "Federal Budget (US)",
         "United States Politics and Government"
       ],
-      "org_facet": [
-        "House of Representatives",
-        "Democratic Party",
-        "Republican Party"
-      ],
+      "org_facet": ["House of Representatives", "Democratic Party", "Republican Party"],
       "per_facet": ["DeSaulnier, Mark James"],
       "geo_facet": [],
       "media": [
@@ -461,11 +453,7 @@
       "abstract": "People who deem themselves judge, jury and executioner walk among us, and we have no real way of knowing when they will turn on us.",
       "des_facet": ["Deaths (Fatalities)", "Social Conditions and Trends"],
       "org_facet": [],
-      "per_facet": [
-        "Neely, Jordan (d 2023)",
-        "Yarl, Ralph",
-        "Gillis, Kaylin (2003-23)"
-      ],
+      "per_facet": ["Neely, Jordan (d 2023)", "Yarl, Ralph", "Gillis, Kaylin (2003-23)"],
       "geo_facet": ["New York City"],
       "media": [
         {
@@ -567,10 +555,7 @@
       "type": "Article",
       "title": "At Least 9 Dead, Including Gunman, in Shooting at Texas Mall",
       "abstract": "A police officer on an unrelated assignment nearby rushed toward the sounds of gunfire and killed the gunman.",
-      "des_facet": [
-        "Allen, Tex, Mall Shooting (May 2023)",
-        "Shopping Centers and Malls"
-      ],
+      "des_facet": ["Allen, Tex, Mall Shooting (May 2023)", "Shopping Centers and Malls"],
       "org_facet": ["Allen Premium Outlets (Allen, Tex)"],
       "per_facet": ["Garcia, Mauricio (d 2023)"],
       "geo_facet": ["Allen (Tex)"],
@@ -713,11 +698,7 @@
       "type": "Article",
       "title": "In Rape Trial Deposition Video, Trump Says Vulgar Tape Simply Reflects Truth",
       "abstract": "The former president did not disavow the “Access Hollywood” video when questioned by lawyers for E. Jean Carroll, who has accused him of attacking her. They rested their case Thursday.",
-      "des_facet": [
-        "Sex Crimes",
-        "United States Politics and Government",
-        "Libel and Slander"
-      ],
+      "des_facet": ["Sex Crimes", "United States Politics and Government", "Libel and Slander"],
       "org_facet": ["Bergdorf Goodman"],
       "per_facet": [
         "Trump, Donald J",
