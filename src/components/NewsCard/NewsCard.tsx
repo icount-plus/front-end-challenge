@@ -19,7 +19,7 @@ export function NewsCard({
 }: NewsCardProps) {
   return (
     <>
-      <div className="card">
+      <div className="card" data-testid="news-card">
         <img src={image_src} alt={image_alt} className="card__image" />
         <div className="card__content">
           <p className="card__content-publishedTime">

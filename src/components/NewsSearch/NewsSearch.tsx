@@ -20,7 +20,7 @@ export function NewsSearch() {
         return data.multimedia.length ? (
           <NewsCard
             image_src={`${STATIC_URL}${data.multimedia[0].url}`}
-            image_alt=""
+            image_alt={`image of ${data.headline.main}`}
             title={data.headline.main}
             subtitle={data.abstract}
             pub_date={data.pub_date}
@@ -31,6 +31,6 @@ export function NewsSearch() {
       })}
     </>
   ) : (
-    <Loading />
+    <Loading data-testId="loading" />
   );
 }
