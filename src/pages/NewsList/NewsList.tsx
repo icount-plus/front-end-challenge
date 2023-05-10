@@ -1,6 +1,6 @@
 import { Header } from "components/Header/Header";
-import { NewsCard } from "components/NewsCard/NewsCard";
 import "./styles.scss";
+import { NewsSearch } from "components/NewsSearch/NewsSearch";
 export function NewsList() {
   return (
     <div className="container">
@@ -9,7 +9,7 @@ export function NewsList() {
         <h1> Resultados para pesquisa </h1>
       </section>
       <main>
-        <NewsCard />
+        <NewsSearch />
       </main>
     </div>
   );

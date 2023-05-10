@@ -14,3 +14,8 @@ export const searchNews = async (setData: any) => {
     .get("/search/v2/articlesearch.json", { params: { q: "bitcoin" } })
     .then((resp) => setData(resp.data));
 };
+export const topNews = async (setData: any) => {
+  await newsService
+    .get("mostpopular/v2/viewed/7.json")
+    .then((resp) => setData(resp.data));
+};
