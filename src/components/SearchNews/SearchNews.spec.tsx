@@ -15,7 +15,7 @@ const container = (): RenderResult =>
 describe('Is render SearchNews', () => {
   container();
   it('Is render placeholder', () => {
-    const PLACEHOLDER = screen.getByPlaceholderText('Pesquise por noticias');
+    const PLACEHOLDER = screen.getByPlaceholderText('Pesquise por notícias');
     expect(PLACEHOLDER).toBeInTheDocument();
   });
 });

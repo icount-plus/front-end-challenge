@@ -9,7 +9,7 @@ export function SearchNews() {
       <form>
         <input
           type="search"
-          placeholder="Pesquise por noticias"
+          placeholder="Pesquise por notícias"
           className="inputSearchNews"
           onKeyDown={handleInput}
           onChange={(e) => setSearch(e.target.value)}
