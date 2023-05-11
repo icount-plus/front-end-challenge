@@ -17,9 +17,7 @@ export function TopNews() {
   }, [topNewsList, setTopNewsList]);
 
   return loading ? (
-    <>
-      <Loading />
-    </>
+    <Loading />
   ) : (
     <>
       {topNewsList?.results.map((data) => {

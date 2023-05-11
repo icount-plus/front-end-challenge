@@ -16,9 +16,7 @@ export function NewsSearch() {
   }, [search, setSearchNewsList]);
 
   return loading ? (
-    <>
-      <Loading data-testId="loading" />
-    </>
+    <Loading data-testId="loading" />
   ) : (
     <>
       {searchNewsList?.response.docs.map((data) => {
