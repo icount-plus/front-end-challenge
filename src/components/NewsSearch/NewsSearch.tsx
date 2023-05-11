@@ -4,17 +4,22 @@ import { searchNews } from 'services/news';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Loading } from 'components/Loading/Loading';
+import { useLoadingContext } from 'contexts/LoadingContext';
 
 export function NewsSearch() {
   const { searchNewsList, setSearchNewsList } = useSearchNewsListContext();
   const STATIC_URL = 'https://static01.nyt.com/';
   const { search } = useParams();
-
+  const { setLoading, loading } = useLoadingContext();
   useEffect(() => {
-    searchNews(setSearchNewsList, search);
+    searchNews(setSearchNewsList, search, setLoading);
   }, [search, setSearchNewsList]);
 
-  return searchNewsList?.response.docs.length ? (
+  return loading ? (
+    <>
+      <Loading data-testId="loading" />
+    </>
+  ) : (
     <>
       {searchNewsList?.response.docs.map((data) => {
         return data.multimedia.length ? (
@@ -30,7 +35,5 @@ export function NewsSearch() {
         ) : null;
       })}
     </>
-  ) : (
-    <Loading data-testId="loading" />
   );
 }

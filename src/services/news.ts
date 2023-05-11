@@ -14,13 +14,23 @@ export const newsService = axios.create({
 });
 export const searchNews = async (
   setData: Dispatch<SetStateAction<ISearchNewsList | undefined>>,
-  search: string | undefined
+  search: string | undefined,
+  setLoading: Dispatch<SetStateAction<boolean>>
 ) => {
   await newsService
     .get('/search/v2/articlesearch.json', { params: { q: search } })
-    .then((resp) => setData(resp.data))
+    .then((resp) => {
+      setData(resp.data);
+      setLoading(false);
+    })
     .catch((resp) => alert('Você precisa fazer uma pesquisa em inglês!' + resp));
 };
-export const topNewsService = async (setData: Dispatch<SetStateAction<ITopNews | undefined>>) => {
-  await newsService.get('mostpopular/v2/viewed/7.json').then((resp) => setData(resp.data));
+export const topNewsService = async (
+  setData: Dispatch<SetStateAction<ITopNews | undefined>>,
+  setLoading: Dispatch<SetStateAction<boolean>>
+) => {
+  await newsService.get('mostpopular/v2/viewed/7.json').then((resp) => {
+    setData(resp.data);
+    setLoading(false);
+  });
 };
