@@ -23,14 +23,17 @@ export const searchNews = async (
       setData(resp.data);
       setLoading(false);
     })
-    .catch((resp) => alert('Você precisa fazer uma pesquisa em inglês!' + resp));
+    .catch((resp) => alert(resp));
 };
 export const topNewsService = async (
   setData: Dispatch<SetStateAction<ITopNews | undefined>>,
   setLoading: Dispatch<SetStateAction<boolean>>
 ) => {
-  await newsService.get('mostpopular/v2/viewed/7.json').then((resp) => {
-    setData(resp.data);
-    setLoading(false);
-  });
+  await newsService
+    .get('mostpopular/v2/viewed/7.json')
+    .then((resp) => {
+      setData(resp.data);
+      setLoading(false);
+    })
+    .catch((resp) => alert(resp));
 };
