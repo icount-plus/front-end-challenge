@@ -37,7 +37,7 @@ export function TopNews() {
         return data.media.length ? (
           <NewsCard
             image_src={data.media[0]['media-metadata'][2].url}
-            image_alt="v"
+            image_alt={`image of ${data.title}`}
             title={data.title}
             subtitle={data.abstract}
             pub_date={data.published_date}
