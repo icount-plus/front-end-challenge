@@ -10,7 +10,7 @@ export function SearchNewsInput() {
         <input
           type="search"
           placeholder="Pesquise por notícias"
-          className="inputSearchNews"
+          className="containerForm__inputSearchNews"
           onKeyDown={handleInput}
           onChange={(e) => setSearch(e.target.value)}
         />

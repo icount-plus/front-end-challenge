@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: stretch;
   width: 30%;
-  .inputSearchNews {
+  &__inputSearchNews {
     width: 100%;
     padding: 8px;
     padding-right: 34px;
@@ -13,7 +13,7 @@
     border-bottom: 2px solid #999999;
     font-size: 16px;
     background-position: center right;
-    background-image: url("../../assets/icons8-search-30.png");
+    background-image: url('../../assets/icons8-search-30.png');
     background-repeat: no-repeat;
     background-color: transparent;
     color: white;
@@ -30,18 +30,6 @@
     &::placeholder {
       color: #bbb;
     }
-  }
-  .buttonSearchNews {
-    padding: 17px;
-    padding-left: 55px;
-    width: 300px;
-    border: 1px solid #f5f5f5;
-    font-size: 13px;
-    color: gray;
-    background-image: url();
-    background-repeat: no-repeat;
-    background-position: right center;
-    outline: 0;
   }
   @media (max-width: 1000px) {
     width: 75%;
