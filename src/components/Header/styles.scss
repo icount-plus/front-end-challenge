@@ -1,0 +1,14 @@
+.headercontainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  h1 {
+    color: #fff;
+    font-weight: 500;
+  }
+  @media (max-width: 1000px) {
+    flex-direction: column;
+
+    width: 100%;
+  }
+}
