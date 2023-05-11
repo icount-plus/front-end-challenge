@@ -2,7 +2,7 @@
 
 ![Logo iCount Plus](https://app.icountplus.com.br/static/media/logo.c85570e7.png)
 
-Faça o desafio Front-end e teste seus conhecimentos em React.
+Faça o desafio Front-end e teste seus conhecimentos em React
 
 ## Requisitos
 
