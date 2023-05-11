@@ -23,7 +23,7 @@ Libs:
 Esse projeto é um desafio da empresa Icount Plus com intenção de testar minhas habilidades em ReactJS.
 A aplicação tem a ideia de mostrar notícias para o usuário usando a api do New York Times, na tela inicial temos uma lista de notícias populares e um input para o usuário conseguir pesquisar qualquer notícia.
 
-## 🧮 Sobre o codigo
+## 🧮 Sobre o código
 
 - A aplicação está em ReactJS com typescript e usando sass;
 - Os componentes possuem testes unitários, para garantir a renderização de forma certa;
