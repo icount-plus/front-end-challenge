@@ -1,8 +1,8 @@
-.headercontainer {
+.headerContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  h1 {
+  &__title {
     color: #fff;
     font-weight: 500;
   }
