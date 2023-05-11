@@ -2,8 +2,10 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { useParams } from 'react-router-dom';
 import { useSearchNewsListContext } from 'contexts/SearchNewsContextList';
-import { NewsSearch } from './NewsSearch';
+import { NewsSearchList } from './NewsSearchList';
+import { useLoadingContext } from 'contexts/LoadingContext';
 import { mockDataSearch } from '__mocks__/dataSearch';
+import { Loading } from 'components/Loading/Loading';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -13,9 +15,14 @@ jest.mock('react-router-dom', () => ({
 jest.mock('contexts/SearchNewsContextList', () => ({
   useSearchNewsListContext: jest.fn()
 }));
-
+jest.mock('contexts/LoadingContext', () => ({
+  useLoadingContext: jest.fn()
+}));
 jest.mock('services/news', () => ({
   searchNews: jest.fn()
+}));
+jest.mock('components/Loading/Loading', () => ({
+  Loading: jest.fn()
 }));
 
 describe('NewsSearch', () => {
@@ -25,8 +32,11 @@ describe('NewsSearch', () => {
       searchNewsList: mockDataSearch,
       setSearchNewsList: jest.fn()
     });
-
-    render(<NewsSearch />);
+    (useLoadingContext as jest.Mock).mockReturnValue({
+      loading: false,
+      setLoading: jest.fn()
+    });
+    render(<NewsSearchList />);
     expect(screen.getByText('Test headline')).toBeInTheDocument();
     expect(screen.getByText('Test abstract')).toBeInTheDocument();
     expect(screen.getByText('Publicado em: 09/05/2022')).toBeInTheDocument();
@@ -34,5 +44,18 @@ describe('NewsSearch', () => {
       'src',
       'https://static01.nyt.com/test.jpg'
     );
+  });
+  it('should render Loading', () => {
+    (useParams as jest.Mock).mockReturnValue({});
+    (useSearchNewsListContext as jest.Mock).mockReturnValue({
+      topNewsList: {},
+      setTopNewsList: jest.fn()
+    });
+    (useLoadingContext as jest.Mock).mockReturnValue({
+      loading: true,
+      setLoading: jest.fn()
+    });
+    render(<NewsSearchList />);
+    expect(Loading).toHaveBeenCalled();
   });
 });

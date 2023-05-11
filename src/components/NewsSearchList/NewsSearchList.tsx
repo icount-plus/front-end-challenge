@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { Loading } from 'components/Loading/Loading';
 import { useLoadingContext } from 'contexts/LoadingContext';
 
-export function NewsSearch() {
+export function NewsSearchList() {
   const { searchNewsList, setSearchNewsList } = useSearchNewsListContext();
   const STATIC_URL = 'https://static01.nyt.com/';
   const { search } = useParams();

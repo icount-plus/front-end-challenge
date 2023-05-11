@@ -1,7 +1,7 @@
 import { useSearchNewsInputContext } from 'contexts/SearchNewsInputContext';
 import './styles.scss';
 import { useRequestSearchNews } from 'hooks/useRequestSearchNews';
-export function SearchNews() {
+export function SearchNewsInput() {
   const { setSearch } = useSearchNewsInputContext();
   const { handleInput } = useRequestSearchNews();
   return (

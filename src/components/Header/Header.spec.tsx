@@ -2,10 +2,10 @@ import { RenderResult, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Header } from './Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { SearchNews } from 'components/SearchNews/SearchNews';
+import { SearchNewsInput } from 'components/SearchNewsInput/SearchNewsInput';
 
-jest.mock('components/SearchNews/SearchNews', () => ({
-  SearchNews: jest.fn(() => null)
+jest.mock('components/SearchNewsInput/SearchNewsInput', () => ({
+  SearchNewsInput: jest.fn(() => null)
 }));
 const container = (): RenderResult =>
   render(
@@ -22,8 +22,8 @@ describe('Is render Header', () => {
     const TITLE = screen.getByText('Desafio React News');
     expect(TITLE).toBeInTheDocument();
   });
-  it('Is render SearchNews', () => {
+  it('Is render SearchNews Input', () => {
     container();
-    expect(SearchNews).toHaveBeenCalled();
+    expect(SearchNewsInput).toHaveBeenCalled();
   });
 });
