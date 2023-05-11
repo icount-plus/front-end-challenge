@@ -23,7 +23,10 @@ export const searchNewsService = async (
       setData(resp.data);
       setLoading(false);
     })
-    .catch((resp) => alert(resp));
+    .catch((resp) => {
+      alert(resp);
+      setLoading(false);
+    });
 };
 export const topNewsService = async (
   setData: Dispatch<SetStateAction<ITopNews | undefined>>,
@@ -35,5 +38,8 @@ export const topNewsService = async (
       setData(resp.data);
       setLoading(false);
     })
-    .catch((resp) => alert(resp));
+    .catch((resp) => {
+      alert(resp);
+      setLoading(false);
+    });
 };
