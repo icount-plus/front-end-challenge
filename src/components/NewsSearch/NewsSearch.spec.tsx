@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { useParams } from 'react-router-dom';
 import { useSearchNewsListContext } from 'contexts/SearchNewsContextList';
 import { NewsSearch } from './NewsSearch';
-import { mockDataSearch } from 'mocks/dataSearch';
+import { mockDataSearch } from '__mocks__/dataSearch';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
