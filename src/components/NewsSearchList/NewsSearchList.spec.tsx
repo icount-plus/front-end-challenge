@@ -19,7 +19,7 @@ jest.mock('contexts/LoadingContext', () => ({
   useLoadingContext: jest.fn()
 }));
 jest.mock('services/news', () => ({
-  searchNews: jest.fn()
+  searchNewsService: jest.fn()
 }));
 jest.mock('components/Loading/Loading', () => ({
   Loading: jest.fn()

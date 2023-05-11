@@ -1,6 +1,6 @@
 import { NewsCard } from 'components/NewsCard/NewsCard';
 import { useSearchNewsListContext } from 'contexts/SearchNewsContextList';
-import { searchNews } from 'services/news';
+import { searchNewsService } from 'services/news';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Loading } from 'components/Loading/Loading';
@@ -12,7 +12,7 @@ export function NewsSearchList() {
   const { search } = useParams();
   const { setLoading, loading } = useLoadingContext();
   useEffect(() => {
-    searchNews(setSearchNewsList, search, setLoading);
+    searchNewsService(setSearchNewsList, search, setLoading);
   }, [search, setSearchNewsList]);
 
   return loading ? (

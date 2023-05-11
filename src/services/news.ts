@@ -12,7 +12,7 @@ export const newsService = axios.create({
     Accept: 'application/json'
   }
 });
-export const searchNews = async (
+export const searchNewsService = async (
   setData: Dispatch<SetStateAction<ISearchNewsList | undefined>>,
   search: string | undefined,
   setLoading: Dispatch<SetStateAction<boolean>>
