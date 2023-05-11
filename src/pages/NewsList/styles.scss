@@ -1,20 +1,20 @@
 .container {
   margin: 0;
   height: 91%;
-  section {
+  &__section {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     margin: 5% 0;
-    h1 {
+    &-title {
       color: #fff;
       font-weight: 600;
       margin: 0;
       font-size: 32px;
     }
   }
-  main {
+  &__container {
     width: 100%;
     gap: 18px;
     display: flex;

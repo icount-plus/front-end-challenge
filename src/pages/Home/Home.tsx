@@ -13,10 +13,10 @@ export function Home() {
 
       <div className="container">
         <Header />
-        <section>
-          <h1> Notícias populares </h1>
+        <section className="container__section">
+          <h1 className="container__section-title"> Notícias populares </h1>
         </section>
-        <main>
+        <main className="container__main">
           <TopNews />
         </main>
       </div>

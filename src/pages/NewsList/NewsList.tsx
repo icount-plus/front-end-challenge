@@ -16,10 +16,10 @@ export default function NewsList() {
 
       <div className="container">
         <Header />
-        <section>
-          <h1> Resultados para {search}</h1>
+        <section className="container__section">
+          <h1 className="container__section-title"> Resultados para {search}</h1>
         </section>
-        <main>
+        <main className="container__main">
           <NewsSearchList />
         </main>
       </div>
