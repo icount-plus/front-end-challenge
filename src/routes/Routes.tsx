@@ -1,6 +1,7 @@
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import { Home } from 'pages/Home/Home';
+import { Loading } from 'components/Loading/Loading';
 
 const NewsList = lazy(() => import('pages/NewsList/NewsList'));
 export const RoutesApp = () => {
@@ -10,7 +11,7 @@ export const RoutesApp = () => {
         <Route element={<Home />} path="/" />
         <Route
           element={
-            <Suspense>
+            <Suspense fallback={<Loading />}>
               <NewsList />
             </Suspense>
           }
