@@ -14,7 +14,7 @@ export function Home() {
       <div className="container">
         <Header />
         <section>
-          <h1> Noticías populares </h1>
+          <h1> Notícias populares </h1>
         </section>
         <main>
           <TopNews />
