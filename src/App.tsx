@@ -3,6 +3,7 @@ import { RoutesApp } from 'routes/Routes';
 import { SearchNewsInputContextProvider } from 'contexts/SearchNewsInputContext';
 import { SearchNewsListContextProvider } from 'contexts/SearchNewsContextList';
 import { LoadingContextProvider } from 'contexts/LoadingContext';
+import { TopNewsListContextProvider } from 'contexts/TopNewsListContext';
 
 function App() {
   return (
@@ -10,7 +11,9 @@ function App() {
       <SearchNewsInputContextProvider>
         <SearchNewsListContextProvider>
           <LoadingContextProvider>
-            <RoutesApp />
+            <TopNewsListContextProvider>
+              <RoutesApp />
+            </TopNewsListContextProvider>
           </LoadingContextProvider>
         </SearchNewsListContextProvider>
       </SearchNewsInputContextProvider>
