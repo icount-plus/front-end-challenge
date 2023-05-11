@@ -3,7 +3,7 @@ import { Suspense, lazy } from 'react';
 import { Home } from 'pages/Home/Home';
 import { Loading } from 'components/Loading/Loading';
 
-const NewsList = lazy(() => import('pages/NewsList/NewsList'));
+const SearchNewsList = lazy(() => import('pages/SearchNewsList/SearchNewsList'));
 export const RoutesApp = () => {
   return (
     <BrowserRouter>
@@ -12,7 +12,7 @@ export const RoutesApp = () => {
         <Route
           element={
             <Suspense fallback={<Loading />}>
-              <NewsList />
+              <SearchNewsList />
             </Suspense>
           }
           path="/newslist/:search"

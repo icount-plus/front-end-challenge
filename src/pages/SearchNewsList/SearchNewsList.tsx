@@ -4,10 +4,12 @@ import { NewsSearchList } from 'components/NewsSearchList/NewsSearchList';
 import { useParams } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useSearchNewsListContext } from 'contexts/SearchNewsContextList';
+import { useLoadingContext } from 'contexts/LoadingContext';
 
-export default function NewsList() {
+export default function SearchNewsList() {
   const { search } = useParams();
   const { searchNewsList } = useSearchNewsListContext();
+  const { loading } = useLoadingContext();
   return (
     <>
       <HelmetProvider>
@@ -22,12 +24,11 @@ export default function NewsList() {
           <h1 className="container__section-title"> Resultados para {search}</h1>
         </section>
         <main className="container__main">
-          {searchNewsList?.response.docs.length ? (
-            <NewsSearchList />
-          ) : (
+          {!searchNewsList?.response.docs.length && loading === false ? (
             <h1 className="container__section-title">Não encontramos nada</h1>
+          ) : (
+            <NewsSearchList />
           )}
-          <NewsSearchList />
         </main>
       </div>
     </>
