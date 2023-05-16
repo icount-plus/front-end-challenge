@@ -1,35 +1,34 @@
-# Desafio Front-end iCount Plus
+# Code Challange Digital Republic
+## Capa
 
-![Logo iCount Plus](https://app.icountplus.com.br/static/media/logo.c85570e7.png)
+<img src='https://postimg.cc/Yjjy9J72' height='450'/>
 
-Faça o desafio Front-end e teste seus conhecimentos em React.
+## Objetivo
 
-## Requisitos
+O Objetivo desse desafio é avaliar o conhecimento e capacidade dos candidatos às vagas de programação/desenvolvimento.
 
-- Proficiência em HTML, CSS
-- Familiaridade com React e Sass
-- Programar usando as boas práticas do JavaScript
-- Usar o git para controlar versões do seu código
-- Proatividade e compromisso
+## Como rodar o projeto (localmente)
 
-## Desafio
+Faça o fork ou baixe o projeto e rode o comando a seguir em seu diretorio:
+### `pnpm run dev`
 
-Desenvolver um projeto usando React para listar e pesquisar resultados de alguma API pública das listas à seguir:
+Após isso, o projeto estará rodando em sua máquina local:
+Abra em seu navegador [http://localhost:5173](http://localhost:5173) .
 
-- [apipheny](https://apipheny.io/free-api/)
-- [Public APIs](https://github.com/public-apis/public-apis)
-- [API List](https://apilist.fun)
+## Deploy do projeto
 
-Sinta-se a vontade para escolher qualquer API do link acima, bem como estilizar o projeto da maneira que desejar (usando biblioteca UI ou não).
+https://hcolors-49f0a.web.app/
 
-Depois de concluído, submeta seu projeto com um Pull Request neste repositório.
+# Tecnologias
 
-## Links úteis
+<p align="left">
+  <img src= "https://i.postimg.cc/nVjs5SGw/figma-2048.png' width="40px" height="80px">
+  <img src= "https://i.postimg.cc/2ysCRwms/React-icon.png" width="80">
+  <img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png" width="80">
+ 
+</p>
 
-Alguns links que podem ser úteis para o desafio:
+# References
 
-- [Documentação do React](https://reactjs.org/docs/getting-started.html)
-
-- [Clean Code JavaScript](https://github.com/felipe-augusto/clean-code-javascript)
-
-- [Boas práticas Pull Request](https://medium.com/luizalabs/pull-merge-requests-seguindo-boas-pr%C3%A1ticas-8a7bbbad0ea7)
+ - [Design do projeto no Figma](https://www.figma.com/file/DFdwZjOMvu92noXOQo3Tto/icount-plust-test?type=design&node-id=0%3A1&t=VuL53RkoG7tVet4M-1)
+ - [React Documentation](https://reactjs.org/docs/getting-started.html)

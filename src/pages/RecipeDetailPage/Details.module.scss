@@ -1,0 +1,351 @@
+.title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #252525;
+}
+
+.subtitle {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #252525;
+    margin-bottom: 10px;
+}
+
+.back_button_container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.back_button {
+    background-color: #DD2F2F;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    font-size: 20px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #C41E1E;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 120px;
+
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 425px) {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 375px) {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 320px) {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 280px) {
+        width: 100%;
+    }
+
+}
+
+.image_container {
+    width: 100%;
+    height: 400px;
+    background-color: transparent;
+    border-radius: 10px;
+    margin-bottom: 40px;
+
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+        height: 300px;
+    }
+
+    @media only screen and (max-width: 425px) {
+        width: 100%;
+        height: 300px;
+    }
+
+    @media only screen and (max-width: 375px) {
+        width: 100%;
+        height: 300px;
+    }
+
+    @media only screen and (max-width: 320px) {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+.image {
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media only screen and (max-width: 425px) {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media only screen and (max-width: 375px) {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.row_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+
+    @media only screen and (max-width: 768px) {
+        flex-direction: column;
+    }
+
+    @media only screen and (max-width: 425px) {
+        flex-direction: column;
+    }
+
+    @media only screen and (max-width: 375px) {
+        flex-direction: column;
+    }
+
+    @media only screen and (max-width: 320px) {
+        flex-direction: column;
+    }
+}
+
+.favorite_button {
+    background-color: #DD2F2F;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    font-size: 20px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+
+    &:hover {
+        background-color: #C41E1E;
+    }
+
+    @media only screen and (max-width: 768px) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    @media only screen and (max-width: 425px) {
+        margin-bottom: 20px;
+    }
+
+    @media only screen and (max-width: 375px) {
+        margin-bottom: 20px;
+    }
+
+    @media only screen and (max-width: 320px) {
+        margin-bottom: 20px;
+    }
+}
+
+.share_button {
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+
+    &:hover {
+        background-color: #CFCFCF;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+
+    @media only screen and (max-width: 768px) {
+        margin-bottom: 20px;
+    }
+
+    @media only screen and (max-width: 425px) {
+        margin-bottom: 20px;
+    }
+
+    @media only screen and (max-width: 375px) {
+        margin-bottom: 20px;
+    }
+
+    @media only screen and (max-width: 320px) {
+        margin-bottom: 20px;
+    }
+}
+
+.print_button {
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+
+    &:hover {
+        background-color: #CFCFCF;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+
+    @media only screen and (max-width: 768px) {
+        margin-bottom: 10px;
+    }
+
+    @media only screen and (max-width: 425px) {
+        margin-bottom: 10px;
+    }
+
+    @media only screen and (max-width: 375px) {
+        margin-bottom: 10px;
+    }
+
+    @media only screen and (max-width: 320px) {
+        margin-bottom: 10px;
+    }
+}
+
+.ingredients_container {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media only screen and (max-width: 425px) {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media only screen and (max-width: 375px) {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media only screen and (max-width: 320px) {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.ingredients_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ingredient_item {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #252525;
+    margin-bottom: 10px;
+    text-align: justify !important;
+}
+
+.instructions_container {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media only screen and (max-width: 425px) {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media only screen and (max-width: 375px) {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media only screen and (max-width: 320px) {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.instructions {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #252525;
+    margin-bottom: 10px;
+    text-align: justify !important;
+}
+
+.time {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #DC582A;
+    margin-bottom: 10px;
+}
+
+.servings {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #40834a;
+    margin-bottom: 10px;
+}
