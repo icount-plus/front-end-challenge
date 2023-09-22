@@ -1,6 +1,6 @@
 # Desafio Front-end iCount Plus
 
-![Logo iCount Plus](https://app.icountplus.com.br/static/media/logo.c85570e7.png)
+![Logo iCount Plus](https://icountplus.com.br/wp-content/uploads/2019/09/icountplus-reg-sem-slogan-branca.png)
 
 Faça o desafio Front-end e teste seus conhecimentos em React.
 
