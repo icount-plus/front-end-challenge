@@ -22,7 +22,7 @@ Desenvolver um projeto usando React para listar e pesquisar resultados de alguma
 
 Sinta-se a vontade para escolher qualquer API do link acima, bem como estilizar o projeto da maneira que desejar (usando biblioteca UI ou não).
 
-Depois de concluído, submeta seu projeto com um Pull Request neste repositório.
+Depois de concluído, submeta seu projeto com um Pull Request neste repositório com algumas informações como email, currículo ou perfil do Linkedin e em breve retornaremos com um feedback sobre o seu desafio.
 
 ## Links úteis
 
