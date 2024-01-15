@@ -36,7 +36,11 @@ function ContributorProfile() {
         </div>
       </div>
       <div className="flex flex-wrap mt-2">
-        <p>{profileData?.bio}</p>
+        {profileData?.bio ? (
+          <p>{profileData?.bio}</p>
+        ) : (
+          <p className="text-gray-500">No description provided</p>
+        )}
       </div>
     </>
   );

@@ -20,7 +20,7 @@ function FilterContributors() {
           isBoolean && 'w-full'
         } sm:w-2/4 sm:block`}
       >
-        <Input button={false} placeholder="Type a contributor name..." />
+        <Input button={false} placeholder="Type a contributor name" />
       </div>
       <button type="button" className="sm:hidden" onClick={setIsBoolean}>
         {isBoolean ? (
