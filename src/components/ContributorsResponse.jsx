@@ -29,7 +29,7 @@ function ContributorsResponse() {
         <div
           onMouseEnter={() => setIsBoolean(true)}
           onMouseLeave={() => setIsBoolean(false)}
-          className="absolute border-b bg-bgGray border-bgblue2 max-w-lg w-full p-4 rounded-lg"
+          className="absolute border-b bg-bgGray border-bgblue2 max-w-md w-full p-4 rounded-lg"
           style={{
             left: position.x,
             top: position.y,
@@ -85,7 +85,6 @@ function ContributorsResponse() {
           </div>
         ))
       )}
-
       <div className="w-1 h-1" id="loadMore" />
     </div>
   );

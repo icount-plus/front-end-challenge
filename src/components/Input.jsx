@@ -28,21 +28,17 @@ function Input({ button, placeholder }) {
           className=" w-full p-2 bg-transparent rounded-lg focus:outline-none text-xs sm:text-base"
         />
         {button && (
-          <button
-            type="button"
+          <Button
+            text="Search"
             onClick={() =>
               getInput({
                 inputText: inputRef.current.value,
                 check: checkRef.current.checked,
               })
             }
-          >
-            <Button
-              text="Search"
-              input
-              colors={['bgButtonGreen', 'bdButtonGreen']}
-            />
-          </button>
+            input
+            colors="green"
+          />
         )}
       </div>
 

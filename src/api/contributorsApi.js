@@ -9,9 +9,16 @@ export const fetcher = async (key) => {
   return null;
 };
 
-export const getKeyContributors = (index, previousPageData, repoName) => {
+export const getKeyContributors = (
+  index,
+  previousPageData,
+  repoName,
+  pageSize
+) => {
   if (previousPageData && !previousPageData.length) return null;
-  return `/repos/${repoName}/contributors?per_page=5&page=${index + 1}`;
+  return `/repos/${repoName}/contributors?per_page=${pageSize}&page=${
+    index + 1
+  }`;
 };
 
 export const getKeyContributor = (userName) => `/users/${userName}`;

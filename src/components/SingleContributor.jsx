@@ -42,7 +42,7 @@ function SingleContributor() {
         <div
           onMouseEnter={() => setIsBoolean(true)}
           onMouseLeave={() => setIsBoolean(false)}
-          className="absolute border-b bg-bgGray border-bgblue2 max-w-lg w-full p-4 rounded-lg"
+          className="absolute border-b bg-bgGray border-bgblue2 max-w-md w-full p-4 rounded-lg"
           style={{
             left: position.x,
             top: position.y,

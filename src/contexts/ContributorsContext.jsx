@@ -15,13 +15,19 @@ export default function ContributorsProvider({ children }) {
   const [contributor, setContributor] = useState(null);
   const [loadingContributor, setLoadingContributor] = useState(false);
   const [errorSearch, setErrorSearch] = useState(0);
+  const [isListContributors, setIsListContributors] = useState(false);
 
   const { repoData } = useContext(RepositoryContext);
 
   const { data, error, isLoading, size, setSize } = useSWRInfinite(
     repoData
       ? (index, prevPage) =>
-          getKeyContributors(index, prevPage, repoData.full_name)
+          getKeyContributors(
+            index,
+            prevPage,
+            repoData.full_name,
+            isListContributors ? 5 : 15
+          )
       : null,
     fetcher
   );
@@ -42,6 +48,8 @@ export default function ContributorsProvider({ children }) {
       loadingProfile,
       loadingContributor,
       errorSearch,
+      isListContributors,
+      setIsListContributors,
       setSize,
       setContributor,
       setLoadingContributor,
@@ -58,6 +66,7 @@ export default function ContributorsProvider({ children }) {
       loadingProfile,
       loadingContributor,
       errorSearch,
+      isListContributors,
     ]
   );
 

@@ -4,6 +4,7 @@ import NotFound from './components/NotFound.';
 import Spinner from './components/Spinner/index';
 import { RepositoryContext } from './contexts/RepositoryContext';
 import useDataNotFound from './hooks/useDataNotFound';
+import ContributorsProvider from './contexts/ContributorsContext';
 
 const Contributors = lazy(() => import('./components/Contributors'));
 
@@ -38,7 +39,9 @@ function App() {
             !repoData && <NotFound>Repository not found!</NotFound>
           )}
           <Suspense fallback={<Spinner />}>
-            {repoData && <Contributors />}
+            <ContributorsProvider>
+              {repoData && <Contributors />}
+            </ContributorsProvider>
           </Suspense>
         </section>
       </div>
